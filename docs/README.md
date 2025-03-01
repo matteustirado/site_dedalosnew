@@ -1,8 +1,6 @@
 
 # Dédalos Bar - Documentação do Projeto
 
-![Dédalos Bar Logo](../assets/images/logo/logo.png)
-
 ## Visão Geral
 
 Bem-vindo à documentação oficial do site do Dédalos Bar! Este projeto é um website moderno e interativo para o Dédalos Bar, um estabelecimento exclusivo para homens cis e trans maiores de 18 anos localizado em São Paulo, Belo Horizonte e Rio de Janeiro.
