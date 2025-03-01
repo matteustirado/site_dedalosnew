@@ -1,0 +1,262 @@
+
+/* ==========================================================================
+   Splash Screen - Tela inicial de impacto
+   ========================================================================== */
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 50%, #0a0a0f 100%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Fundo Multichrome */
+.multichrome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 50%, #0a0a0f 100%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Triângulo principal com fade-out nas bordas */
+.multichrome-light {
+    position: absolute;
+    width: 200vh; /* Aumentado para compensar o blur nas bordas */
+    height: 200vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Aplicação do formato triangular */
+    mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    /* Clip-path para definir o triângulo base */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: radial-gradient(
+        circle,
+        rgba(230, 142, 9, 0.15) 0%,
+        rgba(40, 36, 30, 0.1) 40%,
+        rgba(10, 10, 15, 0) 70%
+    );
+    opacity: 0.8;
+    filter: blur(15px); /* Blur para suavizar as bordas */
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+}
+
+/* Triângulos secundários com bordas suavizadas */
+.multichrome-ambient-1,
+.multichrome-ambient-2 {
+    position: absolute;
+    /* Define o formato triangular básico */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    /* Aplica um filtro de blur significativo para esfumar as bordas */
+    filter: blur(80px);
+    opacity: 0.5;
+    transition: transform 3s ease-out;
+    /* Adiciona um gradiente no próprio elemento para desvanecer as bordas */
+    mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0) 80%
+    );
+}
+
+.multichrome-ambient-1 {
+    width: 110vh;
+    height: 110vh;
+    transform: translate(-50%, -50%) rotate(180deg); /* Triângulo invertido */
+    background: radial-gradient(
+        circle,
+        rgba(245, 166, 35, 0.20) 0%,
+        rgba(247, 107, 28, 0.12) 40%,
+        rgba(10, 10, 15, 0) 70%
+    );
+    top: 30%;
+    left: 35%;
+}
+
+.multichrome-ambient-2 {
+    width: 130vh;
+    height: 130vh;
+    transform: translate(-50%, -50%) rotate(135deg); /* Triângulo rotacionado */
+    background: radial-gradient(
+        circle,
+        rgba(255, 36, 36, 0.15) 0%,
+        rgba(230, 142, 9, 0.10) 50%,
+        rgba(10, 10, 15, 0) 75%
+    );
+    bottom: 30%;
+    right: 20%;
+}
+
+/* Triângulo adicional com efeito suavizado nas bordas */
+.multichrome-ambient-3 {
+    position: absolute;
+    width: 140vh;
+    height: 140vh;
+    /* Formato triangular */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: translate(-50%, -50%) rotate(225deg);
+    /* Efeito de blur intensificado para criar bordas extremamente suaves */
+    filter: blur(90px);
+    opacity: 0.35;
+    transition: transform 4s ease-out;
+    background: radial-gradient(
+        circle,
+        rgba(230, 142, 9, 0.15) 0%,
+        rgba(255, 36, 36, 0.10) 40%,
+        rgba(10, 10, 15, 0) 70%
+    );
+    top: 60%;
+    left: 60%;
+    /* Máscara radial para suavizar as bordas */
+    mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 0.5) 55%,
+        rgba(255, 255, 255, 0) 75%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 0.5) 55%,
+        rgba(255, 255, 255, 0) 75%
+    );
+}
+
+/* Efeitos de flutuação para os triângulos */
+.float-effect-1 {
+    animation: float1 15s infinite ease-in-out;
+}
+
+.float-effect-2 {
+    animation: float2 18s infinite ease-in-out;
+}
+
+.float-effect-3 {
+    animation: float3 20s infinite ease-in-out;
+}
+
+@keyframes float1 {
+    0% { transform: translate(-50%, -50%) rotate(180deg); }
+    50% { transform: translate(-45%, -48%) rotate(175deg) scale(1.05); }
+    100% { transform: translate(-50%, -50%) rotate(180deg); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(-50%, -50%) rotate(135deg); }
+    50% { transform: translate(-52%, -54%) rotate(140deg) scale(1.08); }
+    100% { transform: translate(-50%, -50%) rotate(135deg); }
+}
+
+@keyframes float3 {
+    0% { transform: translate(-50%, -50%) rotate(225deg); }
+    50% { transform: translate(-48%, -46%) rotate(220deg) scale(1.03); }
+    100% { transform: translate(-50%, -50%) rotate(225deg); }
+}
+
+/* Estilo para o conteúdo da splash screen */
+.impact-phrase {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    max-width: 850px;
+    padding: 0 20px;
+}
+
+.impact-phrase h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 0 15px rgba(230, 142, 9, 0.5);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.impact-phrase p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: fadeIn 1.2s ease-out 0.5s backwards;
+}
+
+.logo-watermark {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 180px;
+    height: 60px;
+    background-image: url('/assets/images/logo/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade para a splash screen */
+@media (max-width: 768px) {
+    .impact-phrase h1 {
+        font-size: 1.8rem;
+    }
+    
+    .multichrome-light,
+    .multichrome-ambient-1,
+    .multichrome-ambient-2,
+    .multichrome-ambient-3 {
+        width: 150vh;
+        height: 150vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-phrase h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-watermark {
+        width: 140px;
+        height: 45px;
+    }
+}

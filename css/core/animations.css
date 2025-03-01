@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Dédalos Bar - Animations CSS
+   Contém animações e keyframes reutilizáveis em todo o site
+   ========================================================================== */
+
+/* Fade In - Para elementos que surgem suavemente na tela */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade Out - Para elementos que desaparecem suavemente */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Slide Down - Para elementos que descem na tela (menus, dropdowns) */
+@keyframes slideDown {
+  from { 
+    transform: translateY(-20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+/* Slide Up - Para elementos que sobem na tela */
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+/* Slide In Right - Para elementos que entram pela direita */
+@keyframes slideInRight {
+  from { 
+    transform: translateX(50px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+/* Slide In Left - Para elementos que entram pela esquerda */
+@keyframes slideInLeft {
+  from { 
+    transform: translateX(-50px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+/* Float Effect - Para elementos que flutuam suavemente (usado nos elementos multichrome) */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(10px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Float Effect 2 - Variação mais lenta para criar diversidade */
+@keyframes float2 {
+  0% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(-1deg); }
+  66% { transform: translateY(8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Pulse - Para elementos que pulsam para chamar atenção (notificações, status) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Rotate - Para elementos que giram (loaders, ícones) */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Shimmer - Efeito de brilho para destacar elementos (botões, cards) */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Shake - Para feedback negativo (erro em formulários) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Zoom In - Para elementos que aumentam de tamanho */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Zoom Out - Para elementos que diminuem de tamanho */
+@keyframes zoomOut {
+  from { transform: scale(1.2); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Light Speed Effect - Para a transição principal do site */
+@keyframes lightSpeed {
+  0% {
+    transform: translateX(-100%) skewX(30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(20%) skewX(-20deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-5%) skewX(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Multichrome Glow - Para o efeito de brilho no fundo multichrome */
+@keyframes multichromeGlow {
+  0% { 
+    box-shadow: 0 0 5px rgba(245, 166, 35, 0.3),
+                0 0 15px rgba(247, 107, 28, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.5),
+                0 0 40px rgba(247, 107, 28, 0.4);
+  }
+  100% { 
+    box-shadow: 0 0 5px rgba(245, 166, 35, 0.3),
+                0 0 15px rgba(247, 107, 28, 0.2);
+  }
+}
+
+/* Count Animation - Para o contador de check-ins */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing Effect - Para textos que aparecem digitados */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Blinking Cursor - Para cursor piscante em efeitos de digitação */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Bounce - Para elementos com feedback positivo ou chamada de atenção */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* ==========================================================================
+   Classes utilitárias para aplicar animações
+   ========================================================================== */
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.float-effect-1 {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-effect-2 {
+  animation: float2 8s ease-in-out infinite;
+}
+
+.pulse-effect {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.rotate-effect {
+  animation: rotate 2s linear infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shake-effect {
+  animation: shake 0.5s ease-in-out;
+}
+
+.zoom-in {
+  animation: zoomIn 0.4s ease-out forwards;
+}
+
+.zoom-out {
+  animation: zoomOut 0.4s ease-out forwards;
+}
+
+.light-speed {
+  animation: lightSpeed 1s ease-out forwards;
+}
+
+.multichrome-glow {
+  animation: multichromeGlow 3s ease-in-out infinite;
+}
+
+.count-up {
+  animation: countUp 0.3s ease-out forwards;
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+.bounce-effect {
+  animation: bounce 1s ease infinite;
+}
+
+/* Delays para criar sequências de animações */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-750 { animation-delay: 750ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* Controle de animações para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,974 @@
+
+/* =========================================
+   CONTACT SECTION STYLES
+   ========================================= */
+
+.contact-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(145deg, #0a0a0f 0%, #1a1a1a 45%, #28241e 100%);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+/* Background com gradiente radial */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 166, 35, 0.08) 0%,
+    rgba(247, 107, 28, 0.05) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Padrão de grade sutil no fundo */
+.contact-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(245, 166, 35, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.contact-section .section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-section .section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0 0 20px rgba(255, 165, 0, 0.2),
+               0 0 40px rgba(255, 120, 0, 0.1);
+}
+
+.contact-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Sistema de abas para contato (inspirado em info-tabs.css) */
+.contact-tabs {
+  margin-bottom: 2rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-tabs ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 12px;
+  background-color: rgba(10, 10, 15, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  width: 90%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+.contact-tabs li {
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0;
+  flex: 1;
+}
+
+.contact-tabs li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  transition: width 0.3s ease;
+}
+
+.contact-tabs li:hover {
+  color: #ffffff;
+  background-color: rgba(245, 166, 35, 0.1);
+}
+
+.contact-tabs li.active {
+  color: #ffffff;
+  background-color: rgba(245, 166, 35, 0.15);
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+.contact-tabs li.active::after {
+  width: 70%;
+}
+
+/* Conteúdo das abas */
+.contact-tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+}
+
+.contact-tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid de Layout para Contato (agora dentro de uma aba) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Container do Formulário */
+.contact-form-container {
+  background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 15, 0.95));
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(245, 166, 35, 0.15);
+  transition: all 0.4s ease;
+}
+
+.contact-form-container:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(245, 166, 35, 0.3),
+              0 0 40px rgba(247, 107, 28, 0.1);
+  border-color: rgba(245, 166, 35, 0.4);
+}
+
+.contact-form-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+}
+
+.contact-form-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  border-radius: 2px;
+}
+
+/* Estilos do Formulário */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(10, 10, 15, 0.7);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(245, 166, 35, 0.6);
+  box-shadow: 0 0 15px rgba(245, 166, 35, 0.3);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-terms {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.form-terms input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #f76b1c;
+  cursor: pointer;
+}
+
+.form-terms label {
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.form-terms a {
+  color: #f5a623;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.form-terms a:hover {
+  color: #f76b1c;
+  text-decoration: underline;
+}
+
+.btn-submit {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(245, 166, 35, 0.6);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+/* Informações de Contato */
+.contact-info {
+  background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 15, 0.95));
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(245, 166, 35, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.4s ease;
+}
+
+.contact-info:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(245, 166, 35, 0.3),
+              0 0 40px rgba(247, 107, 28, 0.1);
+  border-color: rgba(245, 166, 35, 0.4);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+}
+
+.contact-info h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  border-radius: 2px;
+}
+
+/* Métodos de Contato */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    background-color: rgba(10, 10, 15, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 166, 35, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-method:hover {
+    background-color: rgba(245, 166, 35, 0.1);
+    border-color: rgba(245, 166, 35, 0.3);
+    transform: translateX(5px);
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #000000;
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+  }
+  
+  .contact-details {
+    flex: 1;
+  }
+  
+  .contact-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #ffffff;
+  }
+  
+  .contact-details p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+  }
+  
+  .contact-details a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-details a:hover {
+    color: #f5a623;
+  }
+  
+  /* Ícones de Redes Sociais */
+  .social-media {
+    margin-top: 1rem;
+  }
+  
+  .social-media h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(10, 10, 15, 0.7);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+  }
+  
+  /* Seção Trabalhe Conosco */
+  .careers-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(245, 166, 35, 0.15);
+  }
+  
+  .careers-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .careers-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+  }
+  
+  .careers-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .career-card {
+    flex: 1;
+    min-width: 180px;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 15, 0.8));
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(245, 166, 35, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .career-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(245, 166, 35, 0.3);
+    border-color: rgba(245, 166, 35, 0.3);
+  }
+  
+  .career-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #000000;
+    margin: 0 auto 0.5rem;
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+  }
+  
+  .career-card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+  }
+  
+  .career-location {
+    font-size: 0.85rem;
+    color: rgba(245, 166, 35, 0.8);
+    margin-bottom: 0.5rem;
+  }
+  
+  .career-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .btn-apply {
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(245, 166, 35, 0.3);
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn-apply:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(245, 166, 35, 0.5);
+  }
+  
+  .btn-apply:active {
+    transform: translateY(1px);
+  }
+  
+  .btn-careers {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.1), rgba(247, 107, 28, 0.15), rgba(245, 166, 35, 0.1));
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 8px;
+    color: #f5a623;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .btn-careers:hover {
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.2), rgba(247, 107, 28, 0.25), rgba(245, 166, 35, 0.2));
+    border-color: rgba(245, 166, 35, 0.4);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.2);
+  }
+  
+  /* Conteúdo especializado para a aba "Trabalhe Conosco" */
+  .careers-tab-content {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 15, 0.95));
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(245, 166, 35, 0.15);
+  }
+  
+  .careers-tab-content:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(245, 166, 35, 0.3);
+    border-color: rgba(245, 166, 35, 0.3);
+  }
+  
+  .careers-intro {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .careers-intro h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  .careers-intro p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .careers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Formulário para vagas */
+  .careers-form-container {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(245, 166, 35, 0.15);
+    padding-top: 2rem;
+  }
+  
+  .careers-form-container h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .careers-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .careers-form .form-group.full-width {
+    grid-column: span 2;
+  }
+  
+  .file-upload-container {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    border: 2px dashed rgba(245, 166, 35, 0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: rgba(10, 10, 15, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .file-upload-container:hover {
+    border-color: rgba(245, 166, 35, 0.6);
+    background-color: rgba(245, 166, 35, 0.05);
+  }
+  
+  .file-upload-container input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-upload-icon {
+    font-size: 2rem;
+    color: rgba(245, 166, 35, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .file-upload-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+  }
+  
+  .file-upload-info {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5rem;
+  }
+  
+  .file-name-display {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #f5a623;
+    display: none;
+  }
+  
+  /* Estilos de feedback para o formulário */
+  .form-success,
+  .form-error {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 500;
+    display: none;
+  }
+  
+  .form-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.4);
+    color: #2ecc71;
+  }
+  
+  .form-error {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.4);
+    color: #ff6b6b;
+  }
+  
+  /* Estilo para campos com erro */
+  .form-group.has-error input,
+  .form-group.has-error select,
+  .form-group.has-error textarea {
+    border-color: rgba(220, 53, 69, 0.6);
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+  }
+  
+  .error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: none;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 992px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    
+    .careers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .careers-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .careers-form .form-group.full-width {
+      grid-column: span 1;
+    }
+    
+    .contact-form-container,
+    .contact-info,
+    .careers-tab-content {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .careers-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-tabs ul {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .contact-tabs li {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(245, 166, 35, 0.1);
+    }
+    
+    .contact-tabs li:last-child {
+      border-bottom: none;
+    }
+    
+    .contact-tabs li::after {
+      width: 0;
+      height: 0;
+    }
+    
+    .contact-tabs li.active::after {
+      width: 0;
+    }
+    
+    .career-card {
+      width: 100%;
+    }
+    
+    .contact-section .section-title {
+      font-size: 2.5rem;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+    
+    .contact-method {
+      padding: 0.8rem;
+    }
+    
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contact-section {
+      padding: 4rem 0;
+    }
+    
+    .contact-section .section-container {
+      padding: 0 1.5rem;
+    }
+    
+    .contact-form-container,
+    .contact-info,
+    .careers-tab-content {
+      padding: 1.5rem;
+    }
+    
+    .contact-section .section-title {
+      font-size: 2rem;
+    }
+    
+    .social-icons {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .form-terms {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .form-terms label {
+      margin-top: 0.5rem;
+    }
+    
+    .contact-info h3,
+    .contact-form-container h3,
+    .careers-intro h3 {
+      font-size: 1.5rem;
+    }
+    
+    .contact-details h4 {
+      font-size: 1.1rem;
+    }
+    
+    .careers-form-container h4 {
+      font-size: 1.3rem;
+    }
+    
+    .file-upload-container {
+      height: 100px;
+      padding: 1rem;
+    }
+    
+    .file-upload-icon {
+      font-size: 1.5rem;
+    }
+    
+    .file-upload-text,
+    .file-upload-info {
+      font-size: 0.8rem;
+    }
+    
+    .btn-submit,
+    .btn-careers {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .contact-section .section-title {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+    
+    .contact-section .section-title::after {
+      width: 80px;
+      height: 3px;
+    }
+    
+    .contact-tabs li {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+    
+    .contact-form-container,
+    .contact-info,
+    .careers-tab-content {
+      padding: 1.2rem;
+    }
+    
+    .contact-methods {
+      gap: 1rem;
+    }
+    
+    .form-group label {
+      font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.7rem 0.9rem;
+      font-size: 0.9rem;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
+    }
+    
+    .career-card {
+      padding: 1.2rem;
+    }
+    
+    .career-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Animações para elementos da seção de contato */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contact-form-container,
+  .contact-info,
+  .careers-tab-content {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .contact-method {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .contact-method:nth-child(1) { animation-delay: 0.1s; }
+  .contact-method:nth-child(2) { animation-delay: 0.2s; }
+  .contact-method:nth-child(3) { animation-delay: 0.3s; }
+  .contact-method:nth-child(4) { animation-delay: 0.4s; }
+  
+  .career-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .career-card:nth-child(1) { animation-delay: 0.1s; }
+  .career-card:nth-child(2) { animation-delay: 0.2s; }
+  .career-card:nth-child(3) { animation-delay: 0.3s; }
+  .career-card:nth-child(4) { animation-delay: 0.4s; }
+  

@@ -1,0 +1,141 @@
+
+dedalos_site/
+│
+├── index.html
+├── termos.html
+├── privacidade.html
+├── manifest.json
+├── service-worker.js
+│
+├── assets/
+│   ├── images/
+│   ├── fonts/
+│   └── videos/
+│
+├── css/
+│   ├── core/
+│   │   ├── reset.css
+│   │   ├── variables.css
+│   │   ├── typography.css
+│   │   ├── base.css
+│   │   ├── animations.css
+│   │   ├── accessibility.css
+│   │   └── main.css
+│   │
+│   ├── components/
+│   │   ├── buttons.css
+│   │   ├── forms.css
+│   │   ├── cards.css
+│   │   ├── navigation.css
+│   │   ├── modals.css
+│   │   ├── tabs.css
+│   │   ├── sliders.css
+│   │   ├── accordions.css
+│   │   ├── carousels.css
+│   │   ├── tooltips.css
+│   │   └── loaders.css
+│   │
+│   ├── sections/
+│   │   ├── splash-screen.css
+│   │   ├── age-verification.css
+│   │   ├── header.css
+│   │   ├── hero.css
+│   │   ├── prices.css
+│   │   ├── info-tabs.css
+│   │   ├── rules.css
+│   │   ├── faq.css
+│   │   ├── locations.css
+│   │   ├── contact.css
+│   │   ├── social.css
+│   │   ├── careers.css
+│   │   ├── events.css
+│   │   └── footer.css
+│   │
+│   └── responsive/
+│       ├── mobile.css
+│       ├── tablet.css
+│       ├── desktop.css
+│       └── large-screens.css
+│
+├── js/
+│   ├── core/
+│   │   ├── config.js
+│   │   ├── event-bus.js
+│   │   ├── phrases.js
+│   │   ├── theme.js
+│   │   └── init.js
+│   │
+│   ├── utils/
+│   │   ├── dom.js
+│   │   ├── storage.js
+│   │   ├── animation.js
+│   │   ├── date-time.js
+│   │   ├── validation.js
+│   │   ├── accessibility.js
+│   │   ├── api.js
+│   │   ├── device.js
+│   │   ├── geolocation.js
+│   │   └── performance.js
+│   │
+│   ├── effects/
+│   │   ├── multichrome.js
+│   │   ├── hover.js
+│   │   ├── parallax.js
+│   │   ├── transitions.js
+│   │   ├── lightspeed.js
+│   │   └── neural-animation.js
+│   │
+│   ├── components/
+│   │   ├── age-verification.js
+│   │   ├── header.js
+│   │   ├── tabs.js
+│   │   ├── sliders.js
+│   │   ├── accordions.js
+│   │   ├── form-handlers.js
+│   │   ├── tooltips.js
+│   │   ├── notifications.js
+│   │   ├── file-upload.js
+│   │   └── scroll-observer.js
+│   │
+│   ├── sections/
+│   │   ├── hero.js
+│   │   ├── prices.js
+│   │   ├── checkin-counter.js
+│   │   ├── rules.js
+│   │   ├── faq.js
+│   │   ├── maps.js
+│   │   ├── route-calculator.js
+│   │   ├── contact.js
+│   │   ├── social-feeds.js
+│   │   ├── events.js
+│   │   └── easter-eggs.js
+│   │
+│   ├── integrations/
+│   │   ├── maps-api.js
+│   │   ├── twitter-api.js
+│   │   ├── share-api.js
+│   │   └── analytics.js
+│   │
+│   ├── user/
+│   │   ├── login-system.js
+│   │   ├── user-profile.js
+│   │   ├── balance-manager.js
+│   │   ├── preferences.js
+│   │   └── discounts.js
+│   │
+│   └── pwa/
+│       ├── service-worker-reg.js
+│       ├── offline-manager.js
+│       └── install-prompt.js
+│
+├── docs/
+│   ├── README.md
+│   ├── ARCHITECTURE.md
+│   ├── PROGRESS.md
+│   ├── ACCESSIBILITY.md
+│   └── PERFORMANCE.md
+│
+└── tests/
+    ├── unit/
+    ├── integration/
+    └── e2e/

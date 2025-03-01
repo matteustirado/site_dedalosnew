@@ -1,0 +1,184 @@
+
+# REQUISITOS COMPLETOS DO PROJETO DÉDALOS BAR - SITE OFICIAL
+
+## 1. VISÃO GERAL DO PROJETO
+
+### 1.1 Objetivo Principal
+- Criar um site moderno, interativo e envolvente para o Dédalos Bar.
+- Público-alvo: homens cis e trans maiores de 18 anos.
+- Localização: São Paulo, Belo Horizonte e Rio de Janeiro.
+- Refletir a identidade visual do bar com design impactante e funcionalidades interativas.
+- Garantir facilidade de navegação e acesso rápido a todas as informações.
+
+### 1.2 Premissas Técnicas
+- Frontend inicial: HTML, CSS e JavaScript
+- Futura migração para React e Node.js
+- Estrutura organizada em componentes reutilizáveis
+- Sistema de design consistente
+- Uso de efeitos interativos, como fundo reativo ao mouse (Multichrome Effect)
+- Manter o layout e paleta de cores explorados no código de referência (REF)
+
+## 2. ESTRUTURA DO SITE
+
+### 2.1 Fluxo de Navegação
+- Tela Inicial: Exibe o fundo interativo (Multichrome) e frase de impacto dinâmica que muda a cada acesso.
+- Verificação de Idade: Pop-up que confirma se o usuário é maior de 18 anos (layout conforme código de referência).
+- Tela Principal: Navegação única horizontal com rolagem vertical.
+- Áreas Logadas: Dashboard com recursos exclusivos para usuários cadastrados (fase futura).
+  
+### 2.2 Seções Principais
+- Menu Fixo Superior: Links para todas as seções (início, blog, FAQ, regras, preços, descontos, contato).
+- Seção Hero: Logo grande, status do bar (aberto/fechado), contador de check-ins em tempo real (flutuante).
+- Seção de Preços: Com tabela de preços organizada por dias da semana e horários.
+- Seção de Informações: "Quem Somos", "Regras" e "Localização".
+- Seção de Contato: Formulário de contato, redes sociais e "Trabalhe Conosco".
+- Seção de Eventos: Carrossel de eventos futuros.
+- Rodapé: Informações básicas, termos de uso e créditos (incluindo "Desenvolvido em parceria com a M_tecode").
+
+### 2.2.1 Layout e Efeitos Interativos
+- Fundos com efeitos reativos ao mouse (Multichrome) seguindo o padrão de REF (multichrome.js e multichrome.css).
+- Paleta de cores: manter a aplicada no site REF, potencialmente ajustada às cores principais descritas abaixo.
+- Estrutura e separações de seções inspiradas no layout de index.html (REF).
+
+## 3. DESIGN E IDENTIDADE VISUAL
+
+### 3.1 Paleta de Cores
+- Cores Principais:
+  - Laranja Vibrante (#FF7700)
+  - Azul Prateado (#B0C4DE)
+  - Preto Profundo (#121212)
+  - Cinza Escuro (#3A3A3A)
+  - Vermelho Neon (#FF0033)
+- Gradientes Multichrome:
+  - linear-gradient(to right, #FF7700, #B0C4DE)
+  - linear-gradient(to right, #FF4500, #8B0000)
+- A paleta utilizada no site de referência (style.css, multichrome.css) está aprovada e deve ser mantida como base.
+
+### 3.2 Tipografia
+- Fonte principal: Poppins (várias espessuras).
+- Hierarquia clara de títulos e textos.
+- Sistema tipográfico consistente com boa legibilidade.
+
+### 3.3 Estilo Visual
+- Layout denso e envolvente transmitindo desejo, pertencimento e exclusividade.
+- Efeitos interativos (multichrome) e transições suaves.
+- Ícones personalizados em estilo orgânico com traços divertidos.
+- Age Verification Layout: Manter a abordagem e estilo presentes no REF, pois já atende ao esperado.
+
+## 4. FUNCIONALIDADES E RECURSOS INTERATIVOS
+
+### 4.1 Verificação de Idade
+- Pop-up de verificação ao acessar o site.
+- Opção "Sim" libera acesso com animação de transição (padrão do REF).
+- Opção "Não" exibe aviso discreto com possibilidade de resposta novamente.
+- Layout já validado no código de referência (não expulsar o usuário ao responder “não”).
+
+### 4.2 Animações e Transições
+- Efeito Multichrome: Background reativo ao movimento do mouse (manter lógica e estrutura multichrome.js e multichrome.css).
+- Contador de Check-ins: Atualização em tempo real, destacado e flutuante na tela inicial (hero).
+- Animações de Hover: Efeitos de hover em botões e elementos interativos.
+- Animação de Logo: Possível efeito de rede neural artificial formando labirinto triangular (implementação futura).
+
+## 5. CONTEÚDO E INFORMAÇÕES
+
+### 5.1 Sistema de Preços
+- Segunda a Sexta:
+  - 06h às 13h59: R$ 29,99 (single), R$ 35,99 (mão amiga), R$ 49,99 (marmitex)
+  - 14h às 19h59: R$ 32,99 (single), R$ 49,99 (mão amiga), R$ 59,99 (marmitex)
+  - 20h às 05h59: R$ 35,99 (single), R$ 54,99 (mão amiga), R$ 69,99 (marmitex)
+
+- Sábados, Domingos e Feriados:
+  - 06h às 13h59: R$ 34,99 (single), R$ 58,99 (mão amiga), R$ 79,99 (marmitex)
+  - 14h às 19h59: R$ 49,99 (single), R$ 79,99 (mão amiga), R$ 109,99 (marmitex)
+  - 20h às 05h59: R$ 53,99 (single), R$ 89,99 (mão amiga), R$ 119,99 (marmitex)
+
+### 5.2 Informações Sobre o Bar
+- Quem Somos: Texto descritivo sobre o bar, conceito e atrativos.
+- Regras do Bar: Sistema de slides/cards deslizáveis com regras de conduta (mantemos metodologia inspirada no rules slider do REF).
+- FAQ: Sistema de acordeão com busca para perguntas frequentes.
+- Localizações:
+  - SP: R. Bento Freitas, 38 - República, São Paulo - SP, 01220-000
+  - BH: R. São Paulo, 1735 - Lourdes, Belo Horizonte - MG, 30170-135
+  - RJ: R. Baronesa, 1237 - Praca Seca, Rio de Janeiro - RJ, 21.321-000
+
+### 5.3 Frases de Impacto
+- Biblioteca de 50 frases impactantes (phrases.js no REF).
+- Tom de comunicação voltado para tema de jogos, prazer e diversão.
+- Frases dinâmicas que mudam a cada acesso.
+
+## 6. FUNCIONALIDADES PARA USUÁRIOS LOGADOS (FASE FUTURA)
+
+### 6.1 Dashboard
+- Perfil: Informações e configurações do usuário.
+- Saldo: Visualização e gerenciamento de saldo.
+- Adição de Saldo: Sistema de pagamentos para adicionar créditos.
+- Preferências: Configuração de características pessoais.
+- Cupons: Sistema de descontos e promoções.
+- Achados e Perdidos: Gestão de itens perdidos no estabelecimento.
+
+## 7. RESPONSIVIDADE E DIFERENTES DISPOSITIVOS
+
+### 7.1 Estratégia de Design
+- Design primariamente focado em desktop, mas incluindo estilos para mobile e tablet (de acordo com o REF).
+- Ajustes específicos para telas grandes e responsividade fluida (breakpoints principais).
+
+## 8. RECURSOS PWA E ACESSIBILIDADE
+
+### 8.1 Progressive Web App
+- Configuração de manifest.json.
+- Service Worker para cache e funcionamento offline.
+- Sistema de instalação como aplicativo.
+
+### 8.2 Acessibilidade
+- Melhorias para navegação por teclado.
+- Suporte a leitores de tela.
+- Alto contraste opcional.
+
+## 9. PLANO DE IMPLEMENTAÇÃO
+
+### 9.1 Fases de Desenvolvimento
+1. Fundação: Configuração inicial, estilos fundamentais, JavaScript essencial.
+2. Componentes UI: Estilos de componentes, JavaScript de componentes, acessibilidade básica.
+3. Tela Inicial e Verificação: Splash screen interativa (Multichrome), verificação de idade, animações.
+4. Layout Principal: Header/navegação, Hero section (com check-ins flutuantes), Footer.
+5. Sistema de Preços: Sistema de abas, cards de preços, integração com dados dinâmicos.
+6. Sistema de Informações: Seção "Quem Somos", regras da casa, FAQ interativo.
+7. Integração de Mapas: Configuração da API, interface de localização, calculadora de rotas.
+8. Sistema de Contato: Formulários, upload de arquivos, integração com WhatsApp/e-mail.
+9. Social e Eventos: Feeds sociais, carrossel de eventos, compartilhamento.
+10. PWA e Features Avançadas: Configuração PWA, suporte offline, easter eggs.
+11. Responsividade: Adaptações para mobile, tablet, desktop e telas grandes.
+12. Testes e Otimização: Performance, lazy loading, analytics.
+13. Preparação para Lançamento: Documentação, scripts de implantação.
+
+### 9.2 Sistema de Rastreamento de Progresso
+- 🟢 Completo - Item finalizado, testado e aprovado
+- 🟡 Em andamento - Desenvolvimento iniciado, mas não concluído
+- 🟠 Em revisão - Desenvolvimento concluído, aguardando revisão/testes
+- 🔴 Não iniciado - Item ainda a ser desenvolvido
+- 🔵 Bloqueado - Dependente de outro componente incompleto
+- ⚫ Descartado - Item removido do escopo atual (com justificativa)
+- Barras de progresso visuais para ilustrar o andamento de cada tarefa.
+
+## 10. REQUISITOS TÉCNICOS ADICIONAIS
+
+### 10.1 Arquitetura do Código
+- Estrutura modular com separação clara de responsabilidades (ex.: multichrome.js, phrases.js, main.js).
+- Padrão pub/sub para comunicação entre módulos via event-bus (futuro).
+- Interfaces consistentes para facilitar manutenção.
+- Reuso das estruturas e componente s presentes em REF (layout de separações, pop-up de verificação, elementos de estilo).
+
+### 10.2 Performance
+- Carregamento assíncrono para recursos não críticos.
+- Lazy loading de imagens e componentes.
+- Minificação e bundling para produção.
+- Armazenamento em cache via Service Worker.
+
+### 10.3 Segurança
+- Sanitização de entradas do usuário.  
+- Proteção contra ataques XSS e CSRF.  
+- Políticas de segurança de conteúdo (CSP) para evitar a execução indevida de scripts.  
+- Validação de dados tanto no frontend quanto no backend para garantir a integridade das requisições.  
+- Fluxo seguro para login e cadastro, utilizando protocolos criptografados (HTTPS) e tokens de sessão.  
+- Revisão e monitoramento de logs para detecção de acessos suspeitos ou repetidos.  
+- Uso de bibliotecas confiáveis e manutenção de dependências atualizadas para minimizar vulnerabilidades.

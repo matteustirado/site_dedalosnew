@@ -1,0 +1,125 @@
+
+Fase 1: Fundação (Semana 1)
+1. Configuração inicial:
+   - Arquivos de estrutura do repositório, ajustes no Git e definição de convenções de código.
+   - css/core/reset.css => Normaliza estilos entre navegadores.
+   - css/core/variables.css => Define variáveis de cores (baseada na "nova-paleta.txt") e tamanhos globais.
+   - css/core/typography.css => Estilos tipográficos (importa fonte Poppins, hierarquia de texto).
+   - css/core/base.css => Regras básicas aplicadas a elementos HTML.
+   - css/core/animations.css => Classes de animações e keyframes reutilizáveis.
+   - css/core/accessibility.css => Ajustes para acessibilidade (foco, leitura de tela).
+   - css/core/main.css => Ponto de entrada que importa todos os outros CSS (ordem correta).
+   - js/core/config.js => Configurações e parâmetros globais do site.
+   - js/utils/dom.js => Manipulação de elementos do DOM (seletores, criação de nós).
+   - js/utils/storage.js => Gerenciamento de localStorage/sessionStorage para dados persistentes.
+   - js/core/event-bus.js => Comunicação entre módulos via pub/sub.
+   - js/utils/animation.js => Funções auxiliares que controlam animações e transições.
+
+Fase 2: Componentes de UI (Semana 2-3)
+2. Estilos de componentes:
+   - css/components/buttons.css => Botões e elementos clicáveis.
+   - css/components/forms.css => Campos de formulário, validações visuais e interações.
+   - css/components/cards.css => Exibição de cards para conteúdo.
+   - css/components/modals.css => Layout de pop-ups e diálogos.
+   - css/components/navigation.css => Menus e barras de navegação.
+   - css/components/tooltips.css => Dicas e sinais visuais ao hover.
+   - js/components/form-handlers.js => Lógica e validação final de formulário.
+   - js/components/notifications.js => Controle de alertas e mensagens ao usuário.
+
+Fase 3: Tela Inicial e Verificação (Semana 3-4)
+3. Splash e idade:
+   - css/sections/splash-screen.css => Tela inicial de impacto.
+   - js/effects/multichrome.js => Efeito de fundo reativo (baseado em "novo-manual.txt").
+   - js/core/phrases.js => Biblioteca de frases para exibição dinâmica na splash screen.
+   - css/sections/age-verification.css => Layout do popup de confirmação de idade.
+   - js/components/age-verification.js => Verifica idade do usuário e libera acesso.
+   - js/effects/transitions.js => Animações especiais de transição de telas.
+   - js/effects/lightspeed.js => Efeito "velocidade da luz" para transições.
+
+Fase 4: Layout Principal (Semana 4-5)
+4. Estrutura de navegação e hero:
+   - css/sections/header.css => Estilização do cabeçalho fixo.
+   - js/components/header.js => Comportamento do cabeçalho (scroll, responsividade).
+   - js/components/scroll-observer.js => Detecção de rolagem para gatilhos de animação.
+   - css/sections/hero.css => Seção principal (logo, contador de check-ins).
+   - js/sections/hero.js => Lógica da hero, inclusão de frases e interatividade.
+   - js/sections/checkin-counter.js => Contador de check-ins em tempo real.
+   - css/sections/footer.css => Rodapé do site.
+
+Fase 5: Sistema de Preços (Semana 5-6)
+5. Tabelas e abas de preços:
+   - css/sections/prices.css => Estilização da seção de preços (colunas, faixas de horários).
+   - css/components/tabs.css => Sistema genérico de abas.
+   - js/components/tabs.js => Lógica de mudança entre diferentes abas de preços.
+   - js/sections/prices.js => Integração com dados de horários (date-time.js) e exibição de valores.
+
+Fase 6: Sistema de Informações (Semana 6-7)
+6. Quem somos, regras, FAQ:
+   - css/sections/info-tabs.css => Base para organizar as seções informativas.
+   - js/sections/about.js => Implementa conteúdo de "Quem Somos" (podendo usar cartões, imagens).
+   - css/sections/rules.css => Layout da seção de regras.
+   - css/components/sliders.css => Sistema genérico de slides, carrosséis e regras.
+   - js/components/sliders.js => Funcionalidade de carrosséis e sliders.
+   - js/sections/rules.js => Slider específico para as regras do bar.
+   - css/components/accordions.css => Acordeões para perguntas frequentes.
+   - js/components/accordions.js => Lógica de expandir/recolher perguntas e respostas.
+   - js/sections/faq.js => Busca e filtragem no FAQ.
+
+Fase 7: Integração de Mapas (Semana 7-8)
+7. Localizações e rotas:
+   - js/integrations/maps-api.js => Configuração e uso de Google Maps.
+   - css/sections/locations.css => Seção para exibir mapas e endereços.
+   - js/sections/maps.js => Carregamento dos mapas e marcadores.
+   - js/utils/geolocation.js => Funções para localização do usuário.
+   - js/sections/route-calculator.js => Cálculo de rotas e tempo estimado de chegada.
+  
+Fase 8: Sistema de Contato (Semana 8-9)
+8. Formulários e mídia:
+   - css/sections/contact.css => Layout para formulário de contato e “Trabalhe Conosco”.
+   - js/sections/contact.js => Captura dados, gerencia envio e feedback ao usuário.
+   - js/components/file-upload.js => Upload de arquivos (ex. currículos).
+   - js/utils/api.js => Funções gerais para chamadas de APIs (envio de e-mails ou mensagens).
+
+Fase 9: Social e Eventos (Semana 9-10)
+9. Mídias sociais, carrosséis de eventos:
+   - css/sections/social.css => Layout dos feeds de redes.
+   - js/sections/social-feeds.js => Integração e exibição de postagens (Twitter, etc).
+   - js/integrations/twitter-api.js => Chamadas diretas à API do Twitter.
+   - css/sections/events.css => Layout do carrossel de eventos.
+   - css/components/carousels.css => CSS genérico de carrosséis.
+   - js/sections/events.js => Criação dos carrosséis de eventos futuros.
+   - js/integrations/share-api.js => Compartilhamento de links e eventos em redes sociais.
+
+Fase 10: PWA e Recursos Avançados (Semana 10-11)
+10. Suporte offline:
+   - manifest.json => Configurações de instalação.
+   - service-worker.js => Controla cache e funcionamento offline.
+   - js/pwa/service-worker-reg.js => Registro e lifecycle do service worker.
+   - js/pwa/offline-manager.js => Gerência dos recursos offline.
+   - js/sections/easter-eggs.js => Easter eggs e surpresas do site.
+   - js/effects/neural-animation.js => Animação especial do logo.
+
+Fase 11: Responsividade (Semana 11-12)
+11. CSS responsivo:
+   - css/responsive/mobile.css => Ajustes para telas menores (smartphones).
+   - css/responsive/tablet.css => Ajustes para tablets.
+   - css/responsive/desktop.css => Ajustes para desktops.
+   - css/responsive/large-screens.css => Adaptações para telas muito grandes.
+
+Fase 12: Testes e Otimização (Semana 12-13)
+12. Performance e analytics:
+   - js/utils/performance.js => Monitoramento de desempenho e melhorias (lazy-loading).
+   - js/integrations/analytics.js => Integração com ferramentas de analytics.
+   - Pasta tests/ => Testes unit, integration, e2e e scripts de checagem
+
+Fase 13: Preparação para Lançamento (Semana 13-14)
+13. Documentação e Implantação:
+   - docs/README.md => Guia principal de uso do projeto, instruções de instalação e dicas de contribuição.
+   - docs/ARCHITECTURE.md => Detalhes sobre a arquitetura, tecnologias usadas e fluxos de dados.
+   - docs/PROGRESS.md => Status final das tarefas (eventualmente integradas com sistemas de CI/CD).
+   - js/core/init.js => Script de inicialização geral, carregando os módulos em ordem correta para produção.
+   - Scripts de implantação (por exemplo, scripts/deploy.sh se necessário) => Automação do processo de build, minificação e subida para ambiente de produção.
+   - Ajustes finais no service-worker.js => Garante que a versão mais recente seja carregada e usada pelos navegadores.
+   - Validação final de SEO e metas => Ajustar meta tags, verificação de analytics, performance e acessibilidade.
+
+FIM DO ARQUIVO

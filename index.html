@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dédalos Bar - Bar exclusivo para homens maiores de 18 anos no centro de São Paulo, Belo Horizonte e Rio de Janeiro.">
+    <title>Dédalos Bar - O próximo Level!</title>
+    
+    <!-- Meta tags Open Graph para compartilhamento em redes sociais -->
+    <meta property="og:title" content="Dédalos Bar - O próximo Level!">
+    <meta property="og:description" content="Bar exclusivo para homens maiores de 18 anos com unidades em São Paulo, Belo Horizonte e Rio de Janeiro.">
+    <meta property="og:image" content="https://dedalosbar.com/assets/images/social/og-image.jpg">
+    <meta property="og:url" content="https://dedalosbar.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Meta tags Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dedalosbar">
+    <meta name="twitter:title" content="Dédalos Bar - O próximo Level!">
+    <meta name="twitter:description" content="Bar exclusivo para homens maiores de 18 anos com unidades em São Paulo, Belo Horizonte e Rio de Janeiro.">
+    <meta name="twitter:image" content="https://dedalosbar.com/assets/images/social/twitter-card.jpg">
+    
+    <!-- Meta tags de Geolocalização -->
+    <meta name="geo.placename" content="Dédalos Bar">
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.position" content="-23.543791;-46.644762">
+    <meta name="ICBM" content="-23.543791, -46.644762">
+    
+    <!-- Meta tag de segurança de conteúdo -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://maps.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://cdnjs.cloudflare.com; connect-src 'self' https:;">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f5a623">
+    <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+    
+    <!-- Preload de fontes -->
+    <link rel="preload" href="assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" font-display="swap">
+    <link rel="preload" href="assets/fonts/poppins-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="js/core/init.js" as="script">
+    <link rel="preload" href="js/components/age-verification.js" as="script">
+    <link rel="preload" href="js/effects/multichrome.js" as="script">
+    <link rel="preload" href="assets/images/logo/logo-main.png" as="image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+    
+    <!-- CSS Core -->
+    <link rel="stylesheet" href="css/core/reset.css">
+    <link rel="stylesheet" href="css/core/variables.css">
+    <link rel="stylesheet" href="css/core/typography.css">
+    <link rel="stylesheet" href="css/core/base.css">
+    <link rel="stylesheet" href="css/core/animations.css">
+    <link rel="stylesheet" href="css/core/accessibility.css">
+    
+    <!-- CSS Componentes -->
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/modals.css">
+    <link rel="stylesheet" href="css/components/tabs.css">
+    <link rel="stylesheet" href="css/components/sliders.css">
+    <link rel="stylesheet" href="css/components/accordions.css">
+    <link rel="stylesheet" href="css/components/carousels.css">
+    <link rel="stylesheet" href="css/components/tooltips.css">
+    <link rel="stylesheet" href="css/components/loaders.css">
+    
+    <!-- CSS Seções -->
+    <link rel="stylesheet" href="css/sections/splash-screen.css">
+    <link rel="stylesheet" href="css/sections/age-verification.css">
+    <link rel="stylesheet" href="css/sections/header.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/prices.css">
+    <link rel="stylesheet" href="css/sections/info-tabs.css">
+    <link rel="stylesheet" href="css/sections/rules.css">
+    <link rel="stylesheet" href="css/sections/faq.css">
+    <link rel="stylesheet" href="css/sections/locations.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+    <link rel="stylesheet" href="css/sections/social.css">
+    <link rel="stylesheet" href="css/sections/careers.css">
+    <link rel="stylesheet" href="css/sections/events.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
+    
+    <!-- CSS Responsividade -->
+    <link rel="stylesheet" href="css/responsive/mobile.css">
+    <link rel="stylesheet" href="css/responsive/tablet.css">
+    <link rel="stylesheet" href="css/responsive/desktop.css">
+    <link rel="stylesheet" href="css/responsive/large-screens.css">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Tela Inicial de Impacto -->
+    <div class="splash-screen" id="splashScreen" role="dialog" aria-label="Tela inicial">
+        <div class="multichrome-background" aria-hidden="true">
+            <div class="multichrome-light"></div>
+            <div class="multichrome-ambient-1 float-effect-1"></div>
+            <div class="multichrome-ambient-2 float-effect-2"></div>
+            <div class="multichrome-ambient-3 float-effect-3"></div>
+        </div>
+        
+        <div class="impact-phrase">
+            <h1 id="impactText">Entre no labirinto do desejo e alcance seu próximo nível.</h1>
+            <p>Clique em qualquer lugar para continuar</p>
+        </div>
+        
+        <div class="logo-watermark" aria-hidden="true"></div>
+    </div>
+    
+    <!-- Modal de Verificação de Idade -->
+    <div class="age-verification-modal" id="ageVerificationModal" role="dialog" aria-labelledby="ageVerificationTitle" aria-modal="true" hidden>
+        <div class="modal-content">
+            <h2 id="ageVerificationTitle">Você tem 18 anos ou mais?</h2>
+            <div class="modal-buttons">
+                <button id="btnYes" class="btn btn-yes" aria-label="Sim, tenho 18 anos ou mais">SIM</button>
+                <button id="btnNo" class="btn btn-no" aria-label="Não, tenho menos de 18 anos">NÃO</button>
+            </div>
+            <div class="underage-message" id="underageMessage" aria-live="polite" hidden>
+                <p>Poxa, sentimos muito, mas você ainda não pode entrar aqui.</p>
+                <button id="btnTryAgain" class="btn btn-try-again">Tentar novamente</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animação de Transição -->
+    <div class="lightspeed-animation" id="lightspeedAnimation" aria-hidden="true"></div>
+    
+    <!-- Conteúdo Principal (inicialmente oculto) -->
+    <div class="main-content" id="mainContent" hidden>
+        <!-- Header Fixo -->
+        <!--Alterar imagem de logo no futuro-->
+        <header class="main-header" role="banner">
+            <div class="header-container">
+                <div class="logo-small">
+                    <a href="#hero" aria-label="Voltar ao início">
+                        <img src="assets/images/logo/logo.png" alt="Dédalos Bar" width="120" height="40">
+                    </a>
+                </div>
+                
+                <nav class="main-nav" role="navigation" aria-label="Menu principal">
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#prices">Preços</a></li>
+                        <li><a href="#info">Sobre Nós</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#events">Eventos</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="login-area">
+                    <button class="btn btn-login" data-tooltip="Usuários cadastrados têm uma experiência mais completa e personalizada." aria-label="Login ou Cadastro">
+                        Login / Cadastro
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Seção Hero (Logo e Contador) -->
+        <section id="hero" class="hero-section" aria-labelledby="heroTitle">
+            <div class="hero-container">
+                <div class="status-badge" id="statusBadge" aria-live="polite">
+                    <span>24 HORAS</span>
+                </div>
+                
+                <!--Alterar imagem de logo no futuro-->
+                <div class="main-logo">
+                    <img src="assets/images/logo/logo.png" alt="Dédalos Bar Logo" width="400" height="200">
+                    <h1 id="heroTitle" class="visually-hidden">Dédalos Bar</h1>
+                </div>
+                
+                <div class="checkin-counter">
+                    <div class="counter-value" id="checkinCounter" aria-live="polite">42</div>
+                    <h3>players curtindo agora</h3>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Preços -->
+        <section id="prices" class="prices-section" aria-labelledby="pricesTitle">
+            <div class="section-container">
+                <h2 class="section-title" id="pricesTitle">Preços</h2>
+                
+                <div class="prices-content">
+                    <div class="prices-tabs" role="tablist" aria-label="Tabelas de preços">
+                        <ul>
+                            <li class="active" data-tab="today" role="tab" aria-selected="true" aria-controls="today" id="tab-today" tabindex="0">HOJE</li>
+                            <li data-tab="weekdays" role="tab" aria-selected="false" aria-controls="weekdays" id="tab-weekdays" tabindex="0">SEG - SEX</li>
+                            <li data-tab="weekend" role="tab" aria-selected="false" aria-controls="weekend" id="tab-weekend" tabindex="0">SAB - DOM</li>
+                            <li data-tab="holidays" role="tab" aria-selected="false" aria-controls="holidays" id="tab-holidays" tabindex="0">FERIADOS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="prices-display">
+                        <!-- Preços de Hoje (Ativo por padrão) -->
+                        <div class="price-tab-content active" id="today" role="tabpanel" aria-labelledby="tab-today">
+                            <div class="time-periods-slider">
+                                <div class="current-time-indicator">
+                                    <span id="currentPeriod">Período atual</span>
+                                </div>
+                                
+                                <div class="slider-container">
+                                    <div class="slider-track" id="today-slider-track">
+                                        <!-- Slide 1: Manhã -->
+                                        <div class="time-period-slide" id="today-morning" data-period="morning">
+                                            <h3>Manhã/Tarde (06h - 13:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 29,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 35,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 2: Tarde -->
+                                        <div class="time-period-slide" id="today-afternoon" data-period="afternoon">
+                                            <h3>Tarde/Noite (14h - 19:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 32,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 59,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 3: Noite -->
+                                        <div class="time-period-slide" id="today-night" data-period="night">
+                                            <h3>Noite/Madrugada (20h - 05:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 35,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 54,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 69,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="slider-controls">
+                                    <button class="slider-prev" aria-label="Período anterior"><i class="fas fa-chevron-left"></i></button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator" data-slide="0" data-period="morning" aria-label="Período da manhã"></span>
+                                        <span class="indicator" data-slide="1" data-period="afternoon" aria-label="Período da tarde"></span>
+                                        <span class="indicator" data-slide="2" data-period="night" aria-label="Período da noite"></span>
+                                    </div>
+                                    <button class="slider-next" aria-label="Próximo período"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="price-notes">
+                                <p>* Preços sujeitos a alteração sem aviso prévio</p>
+                                <p>* Obs: Meia noite de dom para seg vira a tabela de segunda</p>
+                                <p>** Obs: Meia noite de sex para sab vira a tabela do fim de semana</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Segunda a Sexta -->
+                        <div class="price-tab-content" id="weekdays" role="tabpanel" aria-labelledby="tab-weekdays" hidden>
+                            <div class="time-periods-slider">
+                                <div class="slider-container">
+                                    <div class="slider-track" id="weekdays-slider-track">
+                                        <!-- Slide 1: Manhã -->
+                                        <div class="time-period-slide" id="weekdays-morning" data-period="morning">
+                                            <h3>Manhã/Tarde (06h - 13:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 29,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 35,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 2: Tarde -->
+                                        <div class="time-period-slide" id="weekdays-afternoon" data-period="afternoon">
+                                            <h3>Tarde/Noite (14h - 19:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 32,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 59,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 3: Noite -->
+                                        <div class="time-period-slide" id="weekdays-night" data-period="night">
+                                            <h3>Noite/Madrugada (20h - 05:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 35,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 54,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 69,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="slider-controls">
+                                    <button class="slider-prev" aria-label="Período anterior"><i class="fas fa-chevron-left"></i></button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0" data-period="morning" aria-label="Período da manhã"></span>
+                                        <span class="indicator" data-slide="1" data-period="afternoon" aria-label="Período da tarde"></span>
+                                        <span class="indicator" data-slide="2" data-period="night" aria-label="Período da noite"></span>
+                                    </div>
+                                    <button class="slider-next" aria-label="Próximo período"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fim de Semana -->
+                        <div class="price-tab-content" id="weekend" role="tabpanel" aria-labelledby="tab-weekend" hidden>
+                            <div class="time-periods-slider">
+                                <div class="slider-container">
+                                    <div class="slider-track" id="weekend-slider-track">
+                                        <!-- Slide 1: Manhã -->
+                                        <div class="time-period-slide" id="weekend-morning" data-period="morning">
+                                            <h3>Manhã/Tarde (06h - 13:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 34,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 58,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 79,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 2: Tarde -->
+                                        <div class="time-period-slide" id="weekend-afternoon" data-period="afternoon">
+                                            <h3>Tarde/Noite (14h - 19:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 79,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 109,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 3: Noite -->
+                                        <div class="time-period-slide" id="weekend-night" data-period="night">
+                                            <h3>Noite/Madrugada (20h - 05:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 53,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 89,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 119,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="slider-controls">
+                                    <button class="slider-prev" aria-label="Período anterior"><i class="fas fa-chevron-left"></i></button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0" data-period="morning" aria-label="Período da manhã"></span>
+                                        <span class="indicator" data-slide="1" data-period="afternoon" aria-label="Período da tarde"></span>
+                                        <span class="indicator" data-slide="2" data-period="night" aria-label="Período da noite"></span>
+                                    </div>
+                                    <button class="slider-next" aria-label="Próximo período"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Feriados -->
+                        <div class="price-tab-content" id="holidays" role="tabpanel" aria-labelledby="tab-holidays" hidden>
+                            <div class="time-periods-slider">
+                                <div class="slider-container">
+                                    <div class="slider-track" id="holidays-slider-track">
+                                        <!-- Slide 1: Manhã -->
+                                        <div class="time-period-slide" id="holidays-morning" data-period="morning">
+                                            <h3>Manhã/Tarde (06h - 13:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 34,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 58,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 79,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 2: Tarde -->
+                                        <div class="time-period-slide" id="holidays-afternoon" data-period="afternoon">
+                                            <h3>Tarde/Noite (14h - 19:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 49,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 79,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 109,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 3: Noite -->
+                                        <div class="time-period-slide" id="holidays-night" data-period="night">
+                                            <h3>Noite/Madrugada (20h - 05:59h)</h3>
+                                            <div class="price-cards">
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                                                    <h4>Single</h4>
+                                                    <div class="price-value">R$ 53,99</div>
+                                                    <p>Entrada individual</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-user-friends"></i></div>
+                                                    <h4>Mão Amiga</h4>
+                                                    <div class="price-value">R$ 89,99</div>
+                                                    <p>Entrada para duas pessoas</p>
+                                                </div>
+                                                <div class="price-card">
+                                                    <div class="price-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                                                    <h4>Marmitex</h4>
+                                                    <div class="price-value">R$ 119,99</div>
+                                                    <p>Entrada para três pessoas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="slider-controls">
+                                    <button class="slider-prev" aria-label="Período anterior"><i class="fas fa-chevron-left"></i></button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0" data-period="morning" aria-label="Período da manhã"></span>
+                                        <span class="indicator" data-slide="1" data-period="afternoon" aria-label="Período da tarde"></span>
+                                        <span class="indicator" data-slide="2" data-period="night" aria-label="Período da noite"></span>
+                                    </div>
+                                    <button class="slider-next" aria-label="Próximo período"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="price-notes">
+                                <p>* Preços para feriados nacionais e locais</p>
+                                <p>* Véspera de feriado segue a mesma tabela</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Informações -->
+        <section id="info" class="info-section" aria-labelledby="infoTitle">
+            <div class="section-container">
+                <h2 class="section-title" id="infoTitle">Sobre Nós</h2>
+                
+                <div class="info-tabs" role="tablist" aria-label="Informações sobre o Dédalos Bar">
+                    <ul>
+                        <li class="active" data-tab="quem-somos" role="tab" aria-selected="true" aria-controls="quem-somos" id="tab-quem-somos" tabindex="0">Quem Somos</li>
+                        <li data-tab="regras" role="tab" aria-selected="false" aria-controls="regras" id="tab-regras" tabindex="0">Regras da Casa</li>
+                        <li data-tab="localizacao" role="tab" aria-selected="false" aria-controls="localizacao" id="tab-localizacao" tabindex="0">Localização</li>
+                    </ul>
+                </div>
+                
+                <div class="info-content">
+                <!-- Quem Somos (Ativo por padrão) -->
+                <div class="info-tab-content active" id="about" role="tabpanel" aria-labelledby="tab-about">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3>🔥 Bem-vindo aos Dédalos! 🔥</h3>
+                            <p>O Dédalos é um bar exclusivo para homens cis e trans maiores de 18 anos, no coração de São Paulo. Aqui, a vibe é soltar as amarras e curtir sem pressa!</p>
+                            
+                            <div class="features">
+                                <div class="feature">
+                                    <i class="fas fa-gamepad" aria-hidden="true"></i>
+                                    <h4>🎮 Games</h4>
+                                    <p>Games pra jogar e provocar</p>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-cocktail" aria-hidden="true"></i>
+                                    <h4>🍹 Drinks</h4>
+                                    <p>Drinks afrodisíacos pra esquentar o clima</p>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-film" aria-hidden="true"></i>
+                                    <h4>🎬 MiniCine</h4>
+                                    <p>MiniCine pra dar aquele close cinematográfico</p>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-door-closed" aria-hidden="true"></i>
+                                    <h4>🔞 Cabines</h4>
+                                    <p>Cabines, Glory Holes e Glory Ass – você sabe o que fazer!</p>
+                                </div>
+                            </div>
+                            
+                            <p class="about-footer">Estamos no Largo do Arouche, um dos maiores pontos gays do Brasil. Quer um rolê sem frescor, cheio de energia e diversão? Vem pro Dédalos! 🚀🔥</p>
+                        </div>
+                        
+                        <div class="about-gallery">
+                            <h4>Nosso Espaço & Equipe</h4>
+                            
+                            <div class="gallery-container">
+                                <!-- Controles de navegação -->
+                                <button class="gallery-prev" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
+                                
+                                <div class="gallery-wrapper">
+                                    <div class="gallery-track">
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/fachada dedalos.jpg" alt="Fachada do Dédalos Bar" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Fachada do Dédalos Bar</div>
+                                        </div>
+                                        
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/dedalos.jpg" alt="Área principal com bar" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Nossa área principal com bar completo</div>
+                                        </div>
+                                        
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/boss-man.png" alt="Sala de jogos" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Nosso Boss</div>
+                                        </div>
+                                        
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/venue-4.jpg" alt="Mini cinema" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Nosso mini cinema exclusivo</div>
+                                        </div>
+                                        
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/team-1.jpg" alt="Equipe de bartenders" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Nossa equipe de bartenders</div>
+                                        </div>
+                                        
+                                        <div class="gallery-item">
+                                            <img src="assets/images/about/team-2.jpg" alt="Equipe de segurança" width="400" height="300" loading="lazy">
+                                            <div class="gallery-caption">Equipe de segurança pronta para garantir seu bem-estar</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="gallery-next" aria-label="Próxima foto"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            
+                            <div class="gallery-indicators">
+                                <span class="indicator active" data-slide="0" aria-label="Foto 1"></span>
+                                <span class="indicator" data-slide="1" aria-label="Foto 2"></span>
+                                <span class="indicator" data-slide="2" aria-label="Foto 3"></span>
+                                <span class="indicator" data-slide="3" aria-label="Foto 4"></span>
+                                <span class="indicator" data-slide="4" aria-label="Foto 5"></span>
+                                <span class="indicator" data-slide="5" aria-label="Foto 6"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <!-- Regras -->
+                    <div class="info-tab-content" id="regras" role="tabpanel" aria-labelledby="tab-regras" hidden>
+                        <div class="rules-slider" aria-label="Regras da casa">
+                            <div class="rules-track">
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-id-card"></i></div>
+                                    <h3>🔞 Só pra maiores de 18!</h3>
+                                    <p>Tem que apresentar documento original com foto (nada de xerox ou foto no celular, ok?). Se tiver versão digital oficial, também aceitamos!</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-ban"></i></div>
+                                    <h3>🚫 Arma aqui? Não pense!</h3>
+                                    <p>Isso inclui armas de fogo, facas, canivetes, giletes, vidros ou qualquer coisa cortante. Ah, e mochilas podem ser revistadas na entrada.</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-pills"></i></div>
+                                    <h3>💊 Drogas? Tô fora!</h3>
+                                    <p>Tráfico de drogas não é bem vindo aqui. Zero tolerância!</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-bed"></i></div>
+                                    <h3>💤 Nada de soneca no rolê!</h3>
+                                    <p>Dormir nos bancos, mesas, chão ou cabines? Melhor deixar pro seu quarto.</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-money-bill"></i></div>
+                                    <h3>💰 Programa? Aqui não!</h3>
+                                    <p>Não ganhei com garotos de programa. Se alguém quiser oferecer esse tipo de serviço, avise a equipe imediatamente!</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-handshake"></i></div>
+                                    <h3>🍻 Respeito é lei!</h3>
+                                    <p>Aqui a gente preza pelo bom senso e diversão. Se rolar briga, barraco, exagero no álcool, desmaios ou qualquer coisa que quebre a harmonia do rolê, a pessoa leva um banimento de 3 meses.</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-hourglass-end"></i></div>
+                                    <h3>⏳ Tempo máximo de permanência:</h3>
+                                    <p>Você pode curtir até 24h seguidas, depois disso é hora de dar um respiro e voltar outro dia!</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-syringe"></i></div>
+                                    <h3>💉 Seringa? Fora do bar!</h3>
+                                    <p>Acesso aos Dédalos com seringas não é permitido, então é melhor deixar fora.</p>
+                                </div>
+                                
+                                <div class="rule-card">
+                                    <div class="rule-icon"><i class="fas fa-smoking"></i></div>
+                                    <h3>🚬 Fumódromo liberado, mas na moral!</h3>
+                                    <p>A área de fumantes comporta até 4 pessoas ao mesmo tempo. Bora dividir esse espaço na paz!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rules-controls">
+                                <button class="rule-prev" aria-label="Regra anterior"><i class="fas fa-chevron-left"></i></button>
+                                <div class="rule-indicators"></div>
+                                <button class="rule-next" aria-label="Próxima regra"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Localização -->
+                    <div class="info-tab-content" id="localizacao" role="tabpanel" aria-labelledby="tab-localizacao" hidden>
+                        <div class="locations-container">
+                            <div class="location-tabs">
+                                <ul role="tablist" aria-label="Nossas unidades">
+                                    <li class="active" data-location="sp" role="tab" aria-selected="true" aria-controls="map-sp" id="tab-sp" tabindex="0">São Paulo</li>
+                                    <li data-location="bh" role="tab" aria-selected="false" aria-controls="map-bh" id="tab-bh" tabindex="0">Belo Horizonte</li>
+                                    <li data-location="rj" role="tab" aria-selected="false" aria-controls="map-rj" id="tab-rj" tabindex="0">Rio de Janeiro</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="maps-container">
+                                <div class="map-wrapper active" id="map-sp" role="tabpanel" aria-labelledby="tab-sp">
+                                    <div class="location-info">
+                                        <h3>São Paulo</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> R. Bento Freitas, 38 - República, São Paulo - SP, 01220-000</p>
+                                        <p><i class="fas fa-subway"></i> Próximo ao Metrô República</p>
+                                        <p><i class="fas fa-car"></i> Estacionamento recomendado: SKY BLUE ESTACIONAMENTO LTDA, R. Rego Freitas, 147</p>
+                                        <a href="https://maps.google.com/?q=R. Bento Freitas, 38 - República, São Paulo - SP, 01220-000" class="btn btn-map" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                                    </div>
+                                    <div class="map-frame" id="map-frame-sp">
+                                        <!-- Mapa será carregado via API do Google Maps -->
+                                        <div class="map-placeholder" aria-hidden="true">Carregando mapa...</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="map-wrapper" id="map-bh" role="tabpanel" aria-labelledby="tab-bh" hidden>
+                                    <div class="location-info">
+                                        <h3>Belo Horizonte</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> R. São Paulo, 1735 - Lourdes, Belo Horizonte - MG, 30170-135</p>
+                                        <a href="https://maps.google.com/?q=R. São Paulo, 1735 - Lourdes, Belo Horizonte - MG, 30170-135" class="btn btn-map" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                                    </div>
+                                    <div class="map-frame" id="map-frame-bh">
+                                        <!-- Mapa será carregado via API do Google Maps -->
+                                        <div class="map-placeholder" aria-hidden="true">Carregando mapa...</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="map-wrapper" id="map-rj" role="tabpanel" aria-labelledby="tab-rj" hidden>
+                                    <div class="location-info">
+                                        <h3>Rio de Janeiro</h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> R. Baronesa, 1237 - Praca Seca, Rio de Janeiro - RJ, 21.321-000</p>
+                                        <a href="https://maps.google.com/?q=R. Baronesa, 1237 - Praca Seca, Rio de Janeiro - RJ, 21.321-000" class="btn btn-map" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                                    </div>
+                                    <div class="map-frame" id="map-frame-rj">
+                                        <!-- Mapa será carregado via API do Google Maps -->
+                                        <div class="map-placeholder" aria-hidden="true">Carregando mapa...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de FAQ -->
+        <section id="faq" class="faq-section" aria-labelledby="faqTitle">
+            <div class="section-container">
+                <h2 class="section-title" id="faqTitle">Perguntas Frequentes</h2>
+                
+                <div class="faq-search">
+                    <div class="search-container">
+                        <input type="text" id="faqSearch" placeholder="Buscar perguntas..." aria-label="Buscar perguntas frequentes">
+                        <button class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="faq-accordion" role="region" aria-label="Perguntas e respostas frequentes">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                            <span>💥 O que é o Dédalos Bar?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq1" hidden>
+                            <p>O Dédalos é um bar exclusivo para homens maiores de 18 anos que curtom estar entre outros caras. Aqui, você pode tomar um drink, curtir um som, jogar, explorar nosso labirinto e se jogar na experiência!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                            <span>🔥 O que rola no Dédalos?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq2" hidden>
+                            <ul>
+                                <li>Bebidas insanas 🍹</li>
+                                <li>Música boa 🎶</li>
+                                <li>TV com clipes 📺</li>
+                                <li>Buraco da Glória 👀</li>
+                                <li>Máquina de Games 🎮</li>
+                                <li>Mini Cine 🎬</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                            <span>🕛 Horário de Funcionamento</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq3" hidden>
+                            <p>24 horas sem ar! Sim, aqui o rolê não para nunca.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                            <span>💰 Quanto custa a entrada?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq4" hidden>
+                            <p>Dá um pulinho na aba de Preços no site pra conferir!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+                            <span>🔄 Posso sair e voltar?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq5" hidden>
+                            <p>Sim! De segunda a quinta-feira, até meia-noite, temos a promoção Vai e Volta. Você pode sair e voltar quantas vezes quiser dentro de 24 horas. Só precisa ter cadastro no nosso site.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+                            <span>🚇 Qual metrô fica mais perto?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq6" hidden>
+                            <p>Estamos pertinho do Metrô República, na esquina com o Largo do Arouche. Chega mais!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq7">
+                            <span>📱 Posso usar o celular?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq7" hidden>
+                            <p>Sim, mas só no térreo! O resto do bar é zona livre de celulares. Curta o momento 😉</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq8">
+                            <span>♻️ Bar Sustentável?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq8" hidden>
+                            <p>Sim! Além de garantir sua diversão, as pessoas se preocupam com o planeta 🌱. Somos certificados pela EURECICLO, usamos materiais ecologicamente corretos, priorizamos eficiência energética e água consciente. Bora fazer a nossa parte!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq9">
+                            <span>🎂 Faço aniversário! Rola algo especial?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq9" hidden>
+                            <p>Sim! No dia do seu aniversário, você entra VIP 🎉. É só pegar seu cupom no site e apresentar o RG na entrada.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq10">
+                            <span>🚗 Tem estacionamento indicado?</span>
+                            <i class="fas fa-chevron-down icon-expand" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq10" hidden>
+                            <p>Sim! Indicamos o SKY BLUE ESTACIONAMENTO LTDA, que fica na Rua Rego Freitas, 147 – República, São Paulo/SP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Contato -->
+        <section id="contact" class="contact-section" aria-labelledby="contactTitle">
+            <div class="section-container">
+                <h2 class="section-title" id="contactTitle">Fale Conosco</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h3>Entre em contato</h3>
+                        <form class="contact-form" id="contactForm" aria-label="Formulário de contato">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <select id="subject" name="subject" required aria-required="true">
+                                    <option value="" disabled selected>Selecione um assunto</option>
+                                    <option value="info">Informações Gerais</option>
+                                    <option value="event">Eventos</option>
+                                    <option value="complaint">Reclamação</option>
+                                    <option value="suggestion">Sugestão</option>
+                                    <option value="press">Imprensa</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            
+                            <div class="form-group form-terms">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                                <label for="privacy">Concordo com a <a href="privacidade.html" target="_blank">Política de Privacidade</a></label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-details">
+                                    <h4>E-mail</h4>
+                                    <p><a href="mailto:contato@dedalosbar.com">contato@dedalosbar.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-details">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/5511912345678" target="_blank" rel="noopener">(11) 91234-5678</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                                <div class="contact-details">
+                                    <h4>Horário de Atendimento</h4>
+                                    <p>Segunda a Domingo, 24h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media">
+                            <h4>Redes Sociais</h4>
+                            <div class="social-icons">
+                                <a href="https://instagram.com/dedalosbar" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://twitter.com/dedalosbar" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://facebook.com/dedalosbar" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://t.me/dedalosbar" class="social-icon" target="_blank" rel="noopener" aria-label="Telegram">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="careers-info">
+                            <h4>Trabalhe Conosco</h4>
+                            <p>Confira nossas vagas abertas:</p>
+                            
+                            <div class="careers-cards">
+                                <div class="career-card">
+                                    <div class="career-icon"><i class="fas fa-cocktail"></i></div>
+                                    <h5>Bartender</h5>
+                                    <p class="career-location">São Paulo e Rio de Janeiro</p>
+                                    <p class="career-description">Experiência mínima de 2 anos com drinks criativos.</p>
+                                    <a href="#apply-form" class="btn btn-sm btn-apply">Candidatar-se</a>
+                                </div>
+                                
+                                <div class="career-card">
+                                    <div class="career-icon"><i class="fas fa-shield-alt"></i></div>
+                                    <h5>Segurança</h5>
+                                    <p class="career-location">Todas as unidades</p>
+                                    <p class="career-description">Curso de vigilante e experiência em casas noturnas.</p>
+                                    <a href="#apply-form" class="btn btn-sm btn-apply">Candidatar-se</a>
+                                </div>
+                                
+                                <div class="career-card">
+                                    <div class="career-icon"><i class="fas fa-broom"></i></div>
+                                    <h5>Auxiliar de Limpeza</h5>
+                                    <p class="career-location">Belo Horizonte</p>
+                                    <p class="career-description">Disponibilidade para trabalhar em turnos.</p>
+                                    <a href="#apply-form" class="btn btn-sm btn-apply">Candidatar-se</a>
+                                </div>
+                            </div>
+                            
+                            <a href="#careers" class="btn btn-careers">Ver Todas as Vagas</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Eventos -->
+        <section id="events" class="events-section" aria-labelledby="eventsTitle">
+            <div class="section-container">
+                <h2 class="section-title" id="eventsTitle">Próximos Eventos</h2>
+                
+                <div class="events-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="event-card">
+                                <div class="event-image">
+                                    <img src="assets/images/events/event1.jpg" alt="Noite Rainbow - Festa com DJ internacional" width="300" height="200">
+                                    <div class="event-date">
+                                        <span class="day">15</span>
+                                        <span class="month">JUN</span>
+                                    </div>
+                                </div>
+                                <div class="event-details">
+                                    <h3>Noite Rainbow</h3>
+                                    <p class="event-description">Festa com DJ internacional e open bar premium até às 23h.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade São Paulo</p>
+                                        <p><i class="fas fa-clock"></i> 22h às
+                                        5h</p>
+                                    </div>
+                                    <a href="#" class="btn btn-event">Saiba Mais</a>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="event-image">
+                                    <img src="assets/images/events/event2.jpg" alt="Baile do Labirinto - Festa temática" width="300" height="200">
+                                    <div class="event-date">
+                                        <span class="day">22</span>
+                                        <span class="month">JUN</span>
+                                    </div>
+                                </div>
+                                <div class="event-details">
+                                    <h3>Baile do Labirinto</h3>
+                                    <p class="event-description">Festa temática com decoração especial e performances exclusivas.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Belo Horizonte</p>
+                                        <p><i class="fas fa-clock"></i> 21h às 4h</p>
+                                    </div>
+                                    <a href="#" class="btn btn-event">Saiba Mais</a>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="event-image">
+                                    <img src="assets/images/events/event3.jpg" alt="Rodeio dos Solteiros - Noite Country" width="300" height="200">
+                                    <div class="event-date">
+                                        <span class="day">29</span>
+                                        <span class="month">JUN</span>
+                                    </div>
+                                </div>
+                                <div class="event-details">
+                                    <h3>Rodeio dos Solteiros</h3>
+                                    <p class="event-description">Noite country com música ao vivo e dress code temático.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Rio de Janeiro</p>
+                                        <p><i class="fas fa-clock"></i> A partir das 20h</p>
+                                    </div>
+                                    <a href="#" class="btn btn-event">Saiba Mais</a>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="event-image">
+                                    <img src="assets/images/events/event4.jpg" alt="Noite do Pijama - Festa com DJ residente" width="300" height="200">
+                                    <div class="event-date">
+                                        <span class="day">06</span>
+                                        <span class="month">JUL</span>
+                                    </div>
+                                </div>
+                                <div class="event-details">
+                                    <h3>Noite do Pijama</h3>
+                                    <p class="event-description">Festa à fantasia com tema "pijama party" e DJ residente.</p>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade São Paulo</p>
+                                        <p><i class="fas fa-clock"></i> 23h às 6h</p>
+                                    </div>
+                                    <a href="#" class="btn btn-event">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-prev" aria-label="Evento anterior"><i class="fas fa-chevron-left"></i></button>
+                        <div class="carousel-indicators"></div>
+                        <button class="carousel-next" aria-label="Próximo evento"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="events-cta">
+                    <a href="#" class="btn btn-large btn-events">Ver Todos os Eventos</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Rodapé -->
+        <footer class="main-footer" role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="assets/images/logo/logo.png" alt="Dédalos Bar" width="180" height="60">
+                        </div>
+                        <p class="footer-tagline">Bar exclusivo para homens maiores de 18 anos.</p>
+                        <div class="footer-social">
+                            <a href="https://instagram.com/dedalosbar" target="_blank" rel="noopener" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/dedalosbar" target="_blank" rel="noopener" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://facebook.com/dedalosbar" target="_blank" rel="noopener" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://t.me/dedalosbar" target="_blank" rel="noopener" aria-label="Telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul class="footer-nav">
+                            <li><a href="#hero">Início</a></li>
+                            <li><a href="#prices">Preços</a></li>
+                            <li><a href="#info">Sobre Nós</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                            <li><a href="#events">Eventos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Unidades</h3>
+                        <div class="footer-locations">
+                            <div class="footer-location">
+                                <h4>São Paulo</h4>
+                                <p>R. Bento Freitas, 38 - República</p>
+                                <p>São Paulo - SP, 01220-000</p>
+                            </div>
+                            <div class="footer-location">
+                                <h4>Belo Horizonte</h4>
+                                <p>R. São Paulo, 1735 - Lourdes</p>
+                                <p>Belo Horizonte - MG, 30170-135</p>
+                            </div>
+                            <div class="footer-location">
+                                <h4>Rio de Janeiro</h4>
+                                <p>R. Baronesa, 1237 - Praca Seca</p>
+                                <p>Rio de Janeiro - RJ, 21.321-000</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contato</h3>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@dedalosbar.com">contato@dedalosbar.com</a></li>
+                            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511912345678" target="_blank" rel="noopener">(11) 91234-5678</a></li>
+                            <li><i class="fas fa-clock"></i> Aberto 24h, todos os dias</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <p>&copy; 2023 Dédalos Bar. Todos os direitos reservados.</p>
+                        <p>Proibida a entrada de menores de 18 anos.</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <a href="termos.html">Termos de Uso</a>
+                        <span class="footer-separator">|</span>
+                        <a href="privacidade.html">Política de Privacidade</a>
+                    </div>
+                    
+                    <div class="footer-credits">
+                        <p>Desenvolvido em parceria com <a href="https://instagram.com.br/m_tecode" target="_blank" rel="noopener">M_tecode</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts essenciais -->
+    <script src="js/core/config.js" defer></script>
+    <script src="js/utils/dom.js" defer></script>
+    <script src="js/utils/storage.js" defer></script>
+    <script src="js/core/event-bus.js" defer></script>
+    <script src="js/effects/multichrome.js" defer></script>
+    <script src="js/core/phrases.js" defer></script>
+    <script src="js/components/splash-screen.js" defer></script>
+    <script src="js/components/age-verification.js" defer></script>
+    <script src="js/effects/transitions.js" defer></script>
+    
+    <!-- Scripts de componentes e seções -->
+    <script src="js/components/header.js" defer></script>
+    <script src="js/components/tabs.js" defer></script>
+    <script src="js/components/sliders.js" defer></script>
+    <script src="js/components/accordions.js" defer></script>
+    <script src="js/sections/hero.js" defer></script>
+    <script src="js/sections/prices.js" defer></script>
+    <script src="js/sections/checkin-counter.js" defer></script>
+    <script src="js/sections/rules.js" defer></script>
+    <script src="js/sections/faq.js" defer></script>
+    <script src="js/sections/contact.js" defer></script>
+    <script src="js/sections/events.js" defer></script>
+    
+    <!-- Scripts de integração -->
+    <script src="js/integrations/maps-api.js" defer></script>
+    <script src="js/integrations/analytics.js" defer></script>
+    
+    <!-- Script de inicialização -->
+    <script src="js/core/init.js" defer></script>
+    
+    <!-- Service Worker (PWA) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado com sucesso:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Falha ao registrar o Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

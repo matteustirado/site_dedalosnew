@@ -1,0 +1,206 @@
+/* ========================================
+   ACCORDION COMPONENTS
+   Estilos para acordeões usados em FAQ e outras seções com conteúdo expansível
+   ======================================== */
+
+.faq-accordion {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* Estilo para cada item do acordeão */
+.faq-item {
+  border-bottom: 1px solid rgba(179, 179, 179, 0.2);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Botão da pergunta */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(245, 166, 35, 0.1);
+  color: #f5a623;
+}
+
+.faq-question span {
+  flex: 1;
+  padding-right: 15px;
+}
+
+/* Ícone de expandir/colapsar */
+.icon-expand {
+  font-size: 1rem;
+  color: #b3b3b3;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .icon-expand {
+  transform: rotate(180deg);
+  color: #f5a623;
+}
+
+/* Área de resposta */
+.faq-answer {
+  padding: 0 30px 20px;
+  color: #b3b3b3;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.faq-answer:not([hidden]) {
+  max-height: 1000px; /* Valor grande o suficiente para acomodar o conteúdo */
+  padding-bottom: 20px;
+}
+
+/* Estilos para listas dentro das respostas */
+.faq-answer ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.faq-answer ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 5px;
+}
+
+.faq-answer ul li:before {
+  content: "•";
+  color: #f5a623;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Estilização do input de busca para o FAQ */
+.faq-search {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.faq-search input[type="text"] {
+  width: 100%;
+  padding: 15px 20px;
+  padding-right: 50px;
+  border: 2px solid rgba(179, 179, 179, 0.2);
+  border-radius: 30px;
+  background-color: rgba(26, 26, 26, 0.6);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-search input[type="text"]:focus {
+  outline: none;
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+
+.faq-search .search-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-search .search-btn:hover,
+.faq-search .search-btn:focus {
+  color: #f5a623;
+}
+
+/* Destaque para resultados de busca */
+.faq-item.search-highlight .faq-question {
+  background-color: rgba(245, 166, 35, 0.1);
+}
+
+.search-term-highlight {
+  background-color: rgba(245, 166, 35, 0.3);
+  color: #ffffff;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Estado de foco para acessibilidade */
+.faq-question:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.5);
+}
+
+/* Animação ao abrir/fechar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-answer:not([hidden]) {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+  
+  .faq-answer {
+    padding: 0 20px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .faq-search input[type="text"] {
+    padding: 12px 15px;
+    padding-right: 45px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .icon-expand {
+    font-size: 0.9rem;
+  }
+}

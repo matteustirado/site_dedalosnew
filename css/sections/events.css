@@ -1,0 +1,369 @@
+/* =========================================
+   SEÇÃO DE EVENTOS 
+   ========================================= */
+
+.events-section {
+    padding: 4rem 0;
+    background-color: var(--color-dark-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.events-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 30% 50%,
+        rgba(230, 142, 9, 0.05),
+        transparent 60%
+    );
+    z-index: 0;
+}
+
+.events-section .section-container {
+    position: relative;
+    z-index: 1;
+}
+
+.events-section .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-shadow: 0 0 10px rgba(245, 166, 35, 0.3);
+    position: relative;
+}
+
+.events-section .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    margin: 0.8rem auto 0;
+    border-radius: 4px;
+}
+
+/* Carrossel de Eventos */
+.events-carousel {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.carousel-container {
+    overflow: hidden;
+    margin: 0 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cards de Eventos */
+.event-card {
+    flex: 0 0 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem;
+    border: 1px solid rgba(247, 107, 28, 0.2);
+    transition: all 0.3s ease;
+    transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+    .event-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .event-card {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+
+.event-card:hover {
+    transform: scale(1);
+    border-color: rgba(247, 107, 28, 0.5);
+    box-shadow: 0 0 15px rgba(245, 166, 35, 0.2);
+}
+
+.event-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #f5a623, #f76b1c);
+    color: var(--color-white);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    min-width: 60px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.event-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-details h3 {
+    color: #f5a623;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.event-description {
+    color: var(--color-gray-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.event-info {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.event-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: var(--color-gray-light);
+}
+
+.event-info i {
+    color: #f5a623;
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+.btn-event {
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    color: var(--color-white);
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.btn-event:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.3);
+}
+
+.btn-event::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+.btn-event:hover::before {
+    left: 100%;
+}
+
+/* Controles do Carrossel */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(26, 26, 26, 0.9);
+    border: 1px solid #f5a623;
+    border-radius: 50%;
+    color: #f5a623;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: #f5a623;
+    color: var(--color-dark-bg);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(179, 179, 179, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .indicator.active {
+    background-color: #f5a623;
+    transform: scale(1.2);
+}
+
+/* CTA para página de eventos */
+.events-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.btn-large.btn-events {
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-large.btn-events:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+}
+
+/* Efeito de carregamento para imagens */
+.event-image.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: loading-shine 1.5s infinite;
+}
+
+@keyframes loading-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Animação de entrada para os cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.event-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.event-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.event-card:nth-child(4) {
+    animation-delay: 0.3s;
+}

@@ -1,0 +1,195 @@
+/* ==========================================================================
+   TABS COMPONENT
+   Sistema genérico de abas para uso em diferentes seções do site
+   ========================================================================== */
+
+/* Container principal das abas */
+.tabs-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Lista de navegação das abas */
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* Estilo básico de cada item de aba */
+.tabs-nav li {
+  margin: 0;
+  position: relative;
+}
+
+/* Estilo do botão/link da aba */
+.tabs-nav li [role="tab"] {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  color: var(--color-text-secondary, #b3b3b3);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+/* Hover das abas */
+.tabs-nav li [role="tab"]:hover {
+  color: var(--color-text-primary, #ffffff);
+}
+
+/* Aba ativa */
+.tabs-nav li.active [role="tab"],
+.tabs-nav li [role="tab"][aria-selected="true"] {
+  color: var(--color-primary, #f5a623);
+  border-bottom-color: var(--color-primary, #f5a623);
+}
+
+/* Animação de linha inferior nas abas ativas */
+.tabs-nav li.active::after,
+.tabs-nav li [role="tab"][aria-selected="true"]::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Efeito de foco para acessibilidade */
+.tabs-nav li [role="tab"]:focus {
+  outline: none;
+}
+
+.tabs-nav li [role="tab"]:focus-visible {
+  box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.5);
+  border-radius: 4px;
+}
+
+/* Container do conteúdo das abas */
+.tabs-content {
+  position: relative;
+  min-height: 200px; /* Altura mínima para evitar saltos de layout */
+}
+
+/* Conteúdo individual de cada aba */
+.tab-pane {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* Conteúdo da aba ativa */
+.tab-pane.active,
+.tab-pane[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Variação de estilo para abas horizontais centralizadas */
+.tabs-nav.tabs-center {
+  justify-content: center;
+}
+
+/* Variação de estilo para abas com fundo */
+.tabs-nav.tabs-filled li [role="tab"] {
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: 4px 4px 0 0;
+  margin-right: 2px;
+}
+
+.tabs-nav.tabs-filled li.active [role="tab"],
+.tabs-nav.tabs-filled li [role="tab"][aria-selected="true"] {
+  background-color: rgba(245, 166, 35, 0.15);
+}
+
+/* Variação com ícones */
+.tabs-nav.tabs-with-icons [role="tab"] i,
+.tabs-nav.tabs-with-icons [role="tab"] .icon {
+  margin-right: 0.5rem;
+  font-size: 1.1em;
+}
+
+/* Abas com contador/badge */
+.tabs-nav [role="tab"] .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--color-accent, #ff2424);
+  color: #ffffff;
+  border-radius: 1rem;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .tabs-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .tabs-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .tabs-nav li [role="tab"] {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Adaptação para telas muito pequenas */
+  @media (max-width: 480px) {
+    .tabs-nav li [role="tab"] {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* Animação suave de transição entre abas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-transition {
+  animation: fadeIn 0.4s ease forwards;
+}

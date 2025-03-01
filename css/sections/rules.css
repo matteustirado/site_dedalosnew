@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Rules Section Styles - Dédalos Bar
+   ========================================================================== */
+
+.rules-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.rules-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    height: 100%;
+}
+
+/* Rule Card Styling */
+.rule-card {
+    flex: 0 0 300px;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 15, 0.95));
+    border-radius: 12px;
+    margin: 0 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    transition: all 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(245, 166, 35, 0.2);
+    border-left: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
+                0 0 0 1px rgba(245, 166, 35, 0.1) inset;
+}
+
+.rule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #f5a623, #f76b1c);
+    opacity: 0.8;
+}
+
+.rule-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.2), rgba(247, 107, 28, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #f5a623;
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.15);
+}
+
+.rule-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.rule-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b3b3b3;
+    flex-grow: 1;
+}
+
+/* Navigation Controls */
+.rules-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.rule-prev,
+.rule-next {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(10, 10, 15, 0.95));
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5a623;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+.rule-prev:hover,
+.rule-next:hover {
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.15), rgba(26, 26, 26, 0.9));
+    transform: scale(1.05);
+}
+
+.rule-prev:focus,
+.rule-next:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.3);
+}
+
+.rule-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
+}
+
+.rule-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rule-indicators .indicator.active {
+    width: 14px;
+    height: 14px;
+    background-color: #f5a623;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .rule-card {
+        flex: 0 0 calc(100% - 30px);
+        padding: 1.5rem;
+    }
+    
+    .rules-slider {
+        padding: 1rem 0;
+    }
+    
+    .rule-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .rule-card {
+        flex: 0 0 calc(50% - 30px);
+    }
+}
+
+/* Animation for Rules Cards */
+@keyframes ruleCardAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rule-card {
+    animation: ruleCardAppear 0.5s ease-out forwards;
+    animation-delay: calc(var(--card-index, 0) * 0.1s);
+    opacity: 0;
+}
+
+/* Multichrome glow effect on cards */
+.rule-card::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.rule-card:hover::after {
+    opacity: 0.8;
+    animation: moveGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveGlow {
+    0% {
+        top: -50px;
+        left: -50px;
+    }
+    100% {
+        top: calc(100% - 50px);
+        left: calc(100% - 50px);
+    }
+}
+
+/* Accessibility Enhancements */
+.rules-slider:focus-within {
+    outline: 2px dashed #f5a623;
+    outline-offset: 4px;
+}
+
+/* When a rule-card is focused with keyboard navigation */
+.rule-card:focus-within {
+    box-shadow: 0 0 0 3px #f5a623, 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}

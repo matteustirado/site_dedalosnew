@@ -1,0 +1,220 @@
+/* ===============================================
+   ACESSIBILIDADE - DÉDALOS BAR
+   ===============================================
+   Ajustes para melhorar a acessibilidade do site,
+   incluindo foco, leitores de tela e contraste
+*/
+
+/* ===============================================
+   FOCO E NAVEGAÇÃO POR TECLADO
+   =============================================== */
+
+/* Estilo de foco visível para navegação por teclado */
+:focus {
+  outline: 3px solid #f5a623;
+  outline-offset: 2px;
+}
+
+/* Foco visível apenas para navegação por teclado, removendo o outline para mouse */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Estilo de foco aprimorado para inputs, botões e elementos interativos */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid #f5a623;
+  box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.4);
+}
+
+/* ===============================================
+   CLASSES PARA LEITORES DE TELA
+   =============================================== */
+
+/* Texto visível apenas para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Permite que o elemento seja focável, mas ainda invisível (para leitores de tela) */
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Alternativa à classe "sr-only" para compatibilidade com a estrutura atual do site */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===============================================
+   TEMAS DE CONTRASTE E LEGIBILIDADE
+   =============================================== */
+
+/* Aplicado quando o usuário ativa o modo de alto contraste */
+.high-contrast {
+  /* Cores de alto contraste */
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --link-color: #f5a623;
+  --border-color: #ffffff;
+  --button-bg: #f5a623;
+  --button-text: #000000;
+}
+
+/* Tema de alto contraste quando ativado */
+body.high-contrast {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.high-contrast a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+body.high-contrast button,
+body.high-contrast .btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--border-color);
+}
+
+/* ===============================================
+   SUPORTE A MOVIMENTO REDUZIDO
+   =============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Removendo animações específicas */
+  .multichrome-background,
+  .multichrome-light,
+  .multichrome-ambient-1,
+  .multichrome-ambient-2,
+  .float-effect-1,
+  .float-effect-2,
+  .lightspeed-animation {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Classe para quando o usuário escolhe reduzir movimento no site */
+body.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ===============================================
+   LEGIBILIDADE DE TEXTO AUMENTADA
+   =============================================== */
+
+/* Aplicado quando o usuário ativa o modo de texto ampliado */
+body.increased-text {
+  font-size: 120%; /* Base aumentada */
+  line-height: 1.6;
+}
+
+body.increased-text h1 {
+  font-size: 2.4em;
+}
+
+body.increased-text h2 {
+  font-size: 2em;
+}
+
+body.increased-text h3 {
+  font-size: 1.7em;
+}
+
+body.increased-text p,
+body.increased-text li,
+body.increased-text label {
+  font-size: 1.2em;
+  line-height: 1.7;
+}
+
+/* ===============================================
+   RECURSOS DE ANÚNCIO ARIA
+   =============================================== */
+
+/* Estilos para regiões anunciadas por ARIA live regions */
+[aria-live] {
+  position: relative;
+}
+
+/* Região dinâmica com nível de urgência "polite" */
+[aria-live="polite"] {
+  /* Espaçamento para ajudar a organizar conteúdo dinâmico */
+  margin: 8px 0;
+}
+
+/* Região dinâmica com nível de urgência "assertive" */
+[aria-live="assertive"] {
+  /* Espaçamento e destaque visual para alertas importantes */
+  margin: 12px 0;
+  padding: 8px;
+  border-left: 3px solid #f5a623;
+}
+
+/* ===============================================
+   ADIÇÕES ESPECÍFICAS PARA O DÉDALOS BAR
+   =============================================== */
+
+/* Melhorias para navegação por teclado no checker de idade */
+.age-verification-modal .btn-yes:focus,
+.age-verification-modal .btn-no:focus,
+.age-verification-modal .btn-try-again:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Melhorar legibilidade de preços para visitantes com dificuldade visual */
+.price-value {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Melhorar contraste para textos sobre fundos escuros ou gradientes */
+.multichrome-background h1,
+.multichrome-background p,
+.modal-content h2,
+.hero-section .status-badge span {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 0.6);
+}

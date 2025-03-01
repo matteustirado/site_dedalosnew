@@ -1,0 +1,272 @@
+/* ===========================================================================
+   DESKTOP.CSS - Ajustes para dispositivos desktop (992px - 1199px)
+   =========================================================================== */
+
+/* Definição de breakpoint para desktops */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+  /* ===== GERAL ===== */
+  body {
+    font-size: 16px;
+  }
+
+  .section-container {
+    max-width: 960px;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  /* ===== HEADER & NAVEGAÇÃO ===== */
+  .main-header {
+    height: 80px;
+  }
+
+  .header-container {
+    padding: 0 25px;
+  }
+
+  .logo-small img {
+    width: 110px;
+  }
+
+  .main-nav ul {
+    gap: 25px;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  /* ===== SPLASH SCREEN & VERIFICAÇÃO DE IDADE ===== */
+  .splash-screen .impact-phrase h1 {
+    font-size: 3.2rem;
+    max-width: 80%;
+  }
+
+  .age-verification-modal .modal-content {
+    width: 450px;
+    padding: 35px;
+  }
+
+  .age-verification-modal h2 {
+    font-size: 2.2rem;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero-section {
+    min-height: 550px;
+  }
+
+  .main-logo img {
+    width: 350px;
+    height: auto;
+  }
+
+  .checkin-counter {
+    width: 130px;
+    height: 130px;
+    right: 10%;
+  }
+
+  .checkin-counter .counter-value {
+    font-size: 3rem;
+  }
+
+  .checkin-counter h3 {
+    font-size: 0.9rem;
+  }
+
+  /* ===== PREÇOS ===== */
+  .prices-tabs ul {
+    gap: 20px;
+  }
+
+  .prices-tabs li {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .price-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .price-card {
+    flex: 1;
+    width: auto;
+    max-width: 280px;
+  }
+
+  .time-period-slide h3 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  /* ===== REGRAS ===== */
+  .rule-card {
+    width: 280px;
+    padding: 30px 25px;
+  }
+
+  .rules-slider .rules-track {
+    gap: 25px;
+  }
+
+  /* ===== INFO TABS ===== */
+  .info-tab-content {
+    padding: 35px;
+  }
+
+  .about-content {
+    display: flex;
+    gap: 40px;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-gallery {
+    flex: 1;
+    width: 45%;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature {
+    flex-basis: calc(50% - 10px);
+  }
+
+  /* ===== LOCALIZAÇÃO ===== */
+  .maps-container {
+    display: flex;
+  }
+
+  .location-info {
+    width: 35%;
+    padding-right: 25px;
+  }
+
+  .map-frame {
+    width: 65%;
+    height: 400px;
+  }
+
+  /* ===== FAQ ===== */  
+  .faq-search .search-container {
+    width: 60%;
+    max-width: 500px;
+  }
+
+  .faq-accordion {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .faq-question {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+
+  .faq-answer {
+    padding: 0 25px 20px;
+  }
+
+  /* ===== CONTATO ===== */
+  .contact-grid {
+    display: flex;
+    gap: 40px;
+  }
+
+  .contact-form-container {
+    flex: 1;
+    width: 55%;
+  }
+
+  .contact-info {
+    flex: 1;
+    width: 45%;
+  }
+
+  .careers-cards {
+    display: flex;
+    gap: 20px;
+  }
+
+  .career-card {
+    flex: 1;
+  }
+
+  /* ===== EVENTOS ===== */
+  .events-carousel .carousel-track {
+    display: flex;
+    gap: 25px;
+  }
+
+  .event-card {
+    flex: 0 0 auto;
+    width: calc(33.33% - 17px);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-columns {
+    display: flex;
+    gap: 30px;
+  }
+
+  .footer-column {
+    flex: 1;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+}
+
+/* ===== AJUSTES ESPECÍFICOS PARA TELAS DESKTOP (SEM MEDIA QUERY) ===== */
+@media screen and (min-width: 992px) {
+  /* Efeitos de hover que só devem aparecer em dispositivos com mouse */
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(245, 166, 35, 0.2);
+  }
+
+  .social-icon:hover {
+    transform: scale(1.15);
+    background-color: var(--color-orange-light, #f76b1c);
+  }
+
+  .gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-item:hover img {
+    filter: brightness(0.8);
+  }
+
+  /* Estilos para tooltip (apenas desktop) */
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

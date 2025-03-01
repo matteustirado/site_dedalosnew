@@ -1,0 +1,243 @@
+/* ====================
+   TABLET RESPONSIVENESS
+   Breakpoints: 768px - 1024px
+   ==================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* ==== GERAL ==== */
+    .section-container {
+        width: 90%;
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+
+    /* ==== SPLASH SCREEN ==== */
+    .splash-screen .impact-phrase h1 {
+        font-size: 2.8rem;
+        max-width: 85%;
+    }
+
+    /* ==== VERIFICAÇÃO DE IDADE ==== */
+    .age-verification-modal .modal-content {
+        width: 80%;
+        max-width: 480px;
+        padding: 2.5rem;
+    }
+
+    /* ==== HEADER ==== */
+    .main-header .header-container {
+        padding: 0 1.5rem;
+    }
+
+    .main-nav ul {
+        gap: 1.5rem;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.95rem;
+    }
+
+    .btn-login {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* ==== HERO ==== */
+    .hero-container {
+        padding: 5rem 2rem 4rem;
+    }
+
+    .main-logo img {
+        width: 320px;
+        height: auto;
+    }
+
+    .checkin-counter .counter-value {
+        font-size: 3.5rem;
+    }
+
+    .status-badge {
+        right: 2rem;
+        top: 2rem;
+    }
+
+    /* ==== PREÇOS ==== */
+    .prices-content {
+        flex-direction: column;
+    }
+
+    .prices-tabs ul {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .prices-tabs ul li {
+        flex: 0 0 auto;
+        padding: 0.8rem 1.5rem;
+        white-space: nowrap;
+    }
+
+    .time-period-slide h3 {
+        font-size: 1.6rem;
+    }
+
+    .price-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .price-card {
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: 220px;
+    }
+
+    /* ==== QUEM SOMOS / REGRAS / LOCALIZAÇÃO ==== */
+    .info-tabs ul {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .info-tabs ul li {
+        flex: 0 0 auto;
+        padding: 0.8rem 1.5rem;
+        white-space: nowrap;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .about-gallery {
+        width: 100%;
+    }
+
+    .gallery-container {
+        height: 280px;
+    }
+
+    .gallery-item img {
+        height: 240px;
+    }
+
+    .rules-slider {
+        width: 90%;
+    }
+
+    .rule-card {
+        padding: 1.5rem;
+        min-height: 320px;
+    }
+
+    /* ==== LOCALIZAÇÃO ==== */
+    .locations-container {
+        flex-direction: column;
+    }
+
+    .location-tabs {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .maps-container {
+        width: 100%;
+    }
+
+    .map-wrapper {
+        flex-direction: column;
+    }
+
+    .location-info, .map-frame {
+        width: 100%;
+    }
+
+    .map-frame {
+        height: 350px;
+        margin-top: 1.5rem;
+    }
+
+    /* ==== FAQ ==== */
+    .faq-search {
+        width: 80%;
+    }
+
+    /* ==== CONTATO ==== */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .careers-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* ==== EVENTOS ==== */
+    .events-carousel .carousel-track {
+        gap: 1.5rem;
+    }
+
+    .event-card {
+        flex: 0 0 calc(50% - 1.5rem);
+        min-width: 300px;
+    }
+
+    /* ==== FOOTER ==== */
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .footer-location {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* Ajustes específicos para tablets na orientação retrato */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .price-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .event-card {
+        flex: 0 0 calc(100% - 1.5rem);
+    }
+}
+
+/* Ajustes para tablets na orientação paisagem com altura limitada */
+@media screen and (min-width: 900px) and (max-width: 1024px) and (max-height: 800px) {
+    .splash-screen .impact-phrase h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-container {
+        padding: 4rem 2rem 3rem;
+    }
+    
+    .time-period-slide {
+        min-height: 420px;
+    }
+}

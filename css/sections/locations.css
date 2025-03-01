@@ -1,0 +1,263 @@
+/* ==========================================================================
+   LOCATIONS SECTION
+   Estilos para a seção de localização com mapas e endereços
+========================================================================== */
+
+.locations-section {
+    padding: 3rem 1rem;
+    background-color: var(--color-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(245, 166, 35, 0.05), transparent 70%);
+    z-index: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container principal de localização */
+.locations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos para as abas de localização */
+.location-tabs {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.location-tabs ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.location-tabs li {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
+}
+
+.location-tabs li:hover {
+    color: var(--color-text-primary);
+    background-color: rgba(245, 166, 35, 0.1);
+}
+
+.location-tabs li.active {
+    color: var(--color-orange);
+    font-weight: 600;
+}
+
+.location-tabs li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Container dos mapas */
+.maps-container {
+    position: relative;
+    min-height: 400px;
+}
+
+.map-wrapper {
+    display: none;
+    padding: 0;
+    height: 100%;
+}
+
+.map-wrapper.active {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .map-wrapper.active {
+        flex-direction: row;
+    }
+}
+
+/* Informações de localização */
+.location-info {
+    padding: 1.5rem;
+    background-color: rgba(10, 10, 15, 0.5);
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.location-info h3 {
+    color: var(--color-orange);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.location-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+}
+
+.location-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.location-info p i {
+    color: var(--color-orange);
+    font-size: 1rem;
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Botão do mapa */
+.btn-map {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-map:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.btn-map:active {
+    transform: translateY(0);
+}
+
+/* Container do mapa */
+.map-frame {
+    flex: 2;
+    min-height: 300px;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+.map-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Estilos responsivos */
+@media (max-width: 767px) {
+    .location-tabs li {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .map-frame {
+        min-height: 250px;
+    }
+    
+    .location-info {
+        padding: 1rem;
+    }
+    
+    .location-info h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .locations-section {
+        padding: 4rem 2rem;
+    }
+    
+    .map-frame {
+        min-height: 400px;
+    }
+    
+    .location-tabs li {
+        padding: 1.25rem 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Animações */
+.map-wrapper {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.map-wrapper.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito parallax suave para o fundo */
+.locations-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(10, 10, 15, 0), rgba(10, 10, 15, 0.5));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Melhorias de acessibilidade */
+.location-tabs li:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: -2px;
+}
+
+.btn-map:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}

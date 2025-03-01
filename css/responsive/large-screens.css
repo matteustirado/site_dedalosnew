@@ -1,0 +1,382 @@
+/* ==========================================================================
+   RESPONSIVE - LARGE SCREENS
+   Adaptações específicas para telas muito grandes (1440px ou superior)
+   ========================================================================== */
+
+/* Breakpoints para telas grandes */
+@media screen and (min-width: 1440px) {
+    /* Ajustes gerais */
+    .section-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    h1, .h1 {
+        font-size: 4rem;
+    }
+
+    h2, .h2 {
+        font-size: 3.2rem;
+    }
+
+    h3, .h3 {
+        font-size: 2.4rem;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    /* Ajustes no Header */
+    .main-header .header-container {
+        max-width: 1400px;
+        padding: 0 2rem;
+    }
+
+    .main-nav ul li {
+        margin: 0 1.5rem;
+    }
+
+    .main-nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    .btn-login {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Ajustes na Splash Screen */
+    .splash-screen .impact-phrase h1 {
+        font-size: 4.5rem;
+        max-width: 80%;
+    }
+
+    .splash-screen .impact-phrase p {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    /* Multichrome background (efeito melhorado) */
+    .multichrome-background {
+        transform: scale(1.2);
+    }
+
+    /* Verificação de Idade */
+    .age-verification-modal .modal-content {
+        max-width: 600px;
+        padding: 3.5rem;
+    }
+
+    .age-verification-modal h2 {
+        font-size: 3rem;
+    }
+
+    .age-verification-modal .btn {
+        padding: 1.2rem 3rem;
+        font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero-section .hero-container {
+        max-width: 1400px;
+        padding: 8rem 2rem;
+    }
+
+    .main-logo img {
+        max-width: 500px;
+    }
+
+    .status-badge span {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .checkin-counter .counter-value {
+        font-size: 4.5rem;
+        width: 140px;
+        height: 140px;
+    }
+
+    .checkin-counter h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Preços */
+    .prices-section .prices-tabs li {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .price-card {
+        padding: 2.5rem;
+    }
+
+    .price-card h4 {
+        font-size: 1.8rem;
+    }
+
+    .price-value {
+        font-size: 2.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .price-card p {
+        font-size: 1.2rem;
+    }
+
+    .slider-indicators .indicator {
+        width: 16px;
+        height: 16px;
+        margin: 0 10px;
+    }
+
+    .slider-prev, .slider-next {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Informações */
+    .info-tabs li {
+        font-size: 1.2rem;
+        padding: 1.2rem 2.5rem;
+    }
+
+    .about-text h3 {
+        font-size: 2.5rem;
+    }
+
+    .about-text p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .feature h4 {
+        font-size: 1.5rem;
+    }
+
+    .feature i {
+        font-size: 2.5rem;
+    }
+
+    /* Galeria */
+    .gallery-container {
+        height: 500px;
+    }
+
+    .gallery-item img {
+        height: 400px;
+    }
+
+    .gallery-caption {
+        font-size: 1.2rem;
+    }
+
+    /* Regras */
+    .rule-card {
+        padding: 2.5rem;
+        margin: 0 1.5rem;
+    }
+
+    .rule-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .rule-card p {
+        font-size: 1.2rem;
+    }
+
+    .rule-icon i {
+        font-size: 2.8rem;
+    }
+
+    /* Localização */
+    .map-wrapper {
+        height: 550px;
+    }
+
+    .location-info h3 {
+        font-size: 2.2rem;
+    }
+
+    .location-info p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-map {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    /* FAQ */
+    .faq-search .search-container {
+        max-width: 800px;
+    }
+
+    .faq-search input {
+        font-size: 1.2rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1.3rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .faq-answer {
+        font-size: 1.2rem;
+        padding: 0 2rem 2rem;
+    }
+
+    /* Contato */
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .form-group label {
+        font-size: 1.2rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .btn-submit {
+        font-size: 1.3rem;
+        padding: 1.2rem 2.5rem;
+    }
+
+    .contact-method h4 {
+        font-size: 1.5rem;
+    }
+
+    .contact-method p {
+        font-size: 1.2rem;
+    }
+
+    .contact-icon i {
+        font-size: 2.5rem;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+
+    /* Eventos */
+    .event-card {
+        width: 350px;
+    }
+
+    .event-image img {
+        height: 240px;
+    }
+
+    .event-date {
+        padding: 1rem;
+    }
+
+    .event-date .day {
+        font-size: 2rem;
+    }
+
+    .event-date .month {
+        font-size: 1.2rem;
+    }
+
+    .event-details h3 {
+        font-size: 1.8rem;
+    }
+
+    .event-description {
+        font-size: 1.2rem;
+    }
+
+    .btn-event {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.8rem;
+    }
+
+    /* Footer */
+    .footer-container {
+        max-width: 1400px;
+        padding: 5rem 2rem 3rem;
+    }
+
+    .footer-column h3 {
+        font-size: 1.8rem;
+    }
+
+    .footer-nav li a, 
+    .footer-contact li,
+    .footer-location p {
+        font-size: 1.1rem;
+    }
+
+    .footer-social a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Telas extra-grandes (1920px ou superior) */
+@media screen and (min-width: 1920px) {
+    .section-container {
+        max-width: 1800px;
+    }
+
+    .hero-section .hero-container {
+        max-width: 1800px;
+        padding: 10rem 2rem;
+    }
+
+    .main-header .header-container {
+        max-width: 1800px;
+    }
+
+    /* Melhorias visuais para efeitos */
+    .multichrome-background {
+        transform: scale(1.5);
+    }
+
+    /* Aumentar tamanho de alguns elementos para TVs e monitores muito grandes */
+    .main-logo img {
+        max-width: 600px;
+    }
+
+    .checkin-counter .counter-value {
+        font-size: 5.5rem;
+        width: 180px;
+        height: 180px;
+    }
+
+    .price-cards {
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .gallery-container {
+        height: 600px;
+    }
+
+    .gallery-item img {
+        height: 500px;
+    }
+
+    /* Ajuste de layout para preenchimento adequado */
+    .info-content, 
+    .faq-accordion, 
+    .contact-grid {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

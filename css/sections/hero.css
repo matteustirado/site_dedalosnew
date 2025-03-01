@@ -1,0 +1,289 @@
+
+/* Hero Section Styles - Dédalos Bar
+   Seção principal com logo e contador de check-ins
+-------------------------------------------------- */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  z-index: 1;
+  background-image: url("../../assets/images/background-super.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Vinheta ao redor */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 0;
+}
+
+/* Overlay adicional para escurecer a imagem de fundo */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 15, 0.7);
+  z-index: -1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  z-index: 2;
+}
+
+/* Status Badge (Aberto 24h) - Centralizado e grande */
+.status-badge {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+  z-index: 10;
+}
+
+.status-badge span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff; /* Branco puro para maior contraste */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 20px rgba(255, 165, 0, 0.8),
+               0 0 40px rgba(255, 120, 0, 0.8),
+               0 0 60px rgba(255, 80, 0, 0.5);
+  animation: glow-pulse 3s infinite;
+}
+
+.status-badge span::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #5dff00; /* Verde vivo para indicar "aberto" */
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: 0 0 15px #5dff00, 0 0 25px rgba(93, 255, 0, 0.7);
+  animation: blink 1.5s infinite;
+}
+
+/* Main Logo */
+.main-logo {
+  margin: 2rem 0 4rem;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 90%;
+  position: relative;
+  z-index: 3;
+}
+
+.main-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(255, 165, 0, 0.9));
+  transition: filter 0.3s ease;
+}
+
+.main-logo:hover img {
+  filter: drop-shadow(0 0 40px rgba(255, 165, 0, 1.0));
+}
+
+/* Checkin Counter - Flutuante e mais parecido com h3 */
+.checkin-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 2rem;
+  animation: floating 4s ease-in-out infinite;
+}
+
+.checkin-counter h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #ffffff; /* Branco puro para maior contraste */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.counter-value {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #ff9500; /* Laranja mais brilhante e contrastante */
+  text-shadow: 0 0 15px rgba(255, 165, 0, 0.9),
+               0 0 30px rgba(255, 120, 0, 0.7),
+               0 0 45px rgba(255, 80, 0, 0.4);
+  position: relative;
+  transition: all 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.counter-value::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #ff9500, transparent);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+}
+
+/* Animations */
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8),
+                 0 0 20px rgba(255, 120, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 165, 0, 1.0),
+                 0 0 40px rgba(255, 120, 0, 0.8),
+                 0 0 60px rgba(255, 80, 0, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8),
+                 0 0 20px rgba(255, 120, 0, 0.6);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { 
+    opacity: 1; 
+    box-shadow: 0 0 15px #5dff00, 0 0 25px rgba(93, 255, 0, 0.7); 
+  }
+  50% { 
+    opacity: 0.7; 
+    box-shadow: 0 0 5px #5dff00; 
+  }
+}
+
+/* Floating animation for counter */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Entry animations */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+  
+  .status-badge span {
+    font-size: 2.5rem;
+  }
+  
+  .status-badge span::before {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+  
+  .main-logo {
+    margin: 1rem 0 3rem;
+  }
+  
+  .counter-value {
+    font-size: 3.5rem;
+  }
+  
+  .checkin-counter h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 1rem;
+  }
+  
+  .status-badge span {
+    font-size: 2rem;
+  }
+  
+  .status-badge span::before {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .main-logo {
+    margin: 3rem 0 2rem;
+  }
+  
+  .checkin-counter h3 {
+    font-size: 1.3rem;
+  }
+  
+  .counter-value {
+    font-size: 3rem;
+  }
+}
+
+/* Suporte a telas grandes */
+@media (min-width: 1600px) {
+  .hero-container {
+    max-width: 1400px;
+  }
+  
+  .status-badge span {
+    font-size: 4.5rem;
+  }
+  
+  .main-logo img {
+    max-width: 600px;
+  }
+  
+  .counter-value {
+    font-size: 5.5rem;
+  }
+  
+  .checkin-counter h3 {
+    font-size: 2.4rem;
+  }
+}

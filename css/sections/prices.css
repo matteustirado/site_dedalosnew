@@ -1,0 +1,529 @@
+
+/* =========================================
+   PRICES SECTION STYLES
+   ========================================= */
+
+.prices-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(145deg, #0a0a0f 0%, #1a1a1a 45%, #28241e 100%);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+/* Background com gradiente mais rico */
+.prices-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 166, 35, 0.08) 0%,
+    rgba(247, 107, 28, 0.05) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Padrão de grade sutil no fundo */
+.prices-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(245, 166, 35, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.prices-section .section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.prices-section .section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0 0 20px rgba(255, 165, 0, 0.2),
+               0 0 40px rgba(255, 120, 0, 0.1);
+}
+
+.prices-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Tabs Navigation - Modificado para exibição em linha */
+.prices-tabs {
+  margin-bottom: 1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.prices-tabs ul {
+  display: flex;
+  flex-direction: row; /* Alterado de column para row */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 12px;
+  background-color: rgba(10, 10, 15, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  width: 90%; /* Alterado para ocupar quase toda a largura */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+.prices-tabs li {
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0;
+  flex: 1; /* Para distribuir igualmente o espaço */
+}
+
+.prices-tabs li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease;
+}
+
+.prices-tabs li:hover {
+  color: #ffffff;
+  background-color: rgba(245, 166, 35, 0.1);
+}
+
+.prices-tabs li.active {
+  color: #ffffff;
+  background-color: rgba(245, 166, 35, 0.15);
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+.prices-tabs li.active::after {
+  width: 70%;
+}
+
+/* Tab Content */
+.price-tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+}
+
+.price-tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Time Periods Slider */
+.time-periods-slider {
+  position: relative;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 2rem 0;
+}
+
+.current-time-indicator {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.current-time-indicator span {
+  display: inline-block;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  color: #000;
+  font-weight: 700;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.slider-container {
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: rgba(10, 10, 15, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.time-period-slide {
+  min-width: 100%;
+  padding: 3rem 2rem;
+}
+
+.time-period-slide h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.time-period-slide h3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  border-radius: 2px;
+}
+
+/* Price Cards */
+.price-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 15, 0.95));
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 166, 35, 0.15);
+  transform: translateY(0);
+}
+
+/* Efeito glow no hover */
+.price-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(245, 166, 35, 0.3),
+              0 0 40px rgba(247, 107, 28, 0.1);
+  border-color: rgba(245, 166, 35, 0.4);
+  z-index: 5;
+}
+
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+}
+
+/* Efeito de brilho na borda superior durante hover */
+.price-card:hover::before {
+  height: 6px;
+  box-shadow: 0 0 15px rgba(245, 166, 35, 0.8);
+}
+
+.price-icon {
+  font-size: 3rem;
+  color: #f5a623;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.price-card:hover .price-icon {
+  transform: scale(1.1);
+  color: #7d370f;
+}
+
+.price-card h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.price-card h4::after {
+  content: '';
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(245, 166, 35, 0.5), transparent);
+}
+
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.price-card:hover .price-value {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+}
+
+.price-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Slider Controls - Modificado para indicadores em formato de bolinha */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Removendo botões prev/next */
+.slider-prev,
+.slider-next {
+  display: none;
+}
+
+.slider-indicators {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+/* Indicadores modificados para serem bolinhas, com apenas o ativo ficando comprido */
+.slider-indicators .indicator {
+  width: 12px; /* Alterado para formato de bolinha */
+  height: 12px; /* Alterado para formato de bolinha */
+  border-radius: 50%; /* Faz ser circular */
+  background-color: rgba(179, 179, 179, 0.3);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider-indicators .indicator:hover {
+  background-color: rgba(179, 179, 179, 0.6);
+}
+
+.slider-indicators .indicator.active {
+  width: 40px; /* Apenas o ativo fica comprido */
+  height: 12px;
+  border-radius: 6px; /* Arredonda as bordas para indicador comprido */
+  background: linear-gradient(to right, #f5a623, #f76b1c);
+  box-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+}
+
+/* Price Notes - Modificado para reduzir espaçamento e ajustar largura */
+.price-notes {
+    margin-top: 2rem; /* Reduzido de 3rem para 2rem */
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5; /* Reduzido de 1.8 para 1.5 */
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .price-notes p {
+    margin-bottom: 0.5rem; /* Espaçamento reduzido entre parágrafos */
+  }
+  
+  /* Estilos responsivos para a seção de preços */
+  @media (max-width: 1024px) {
+    .prices-tabs ul {
+      width: 95%;
+    }
+    
+    .price-cards {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .prices-section {
+      padding: 4rem 0;
+    }
+    
+    .prices-section .section-title {
+      font-size: 2.5rem;
+    }
+    
+    .prices-tabs ul {
+      width: 100%;
+    }
+    
+    .prices-tabs li {
+      padding: 1rem 0.8rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .time-period-slide {
+      padding: 2rem 1rem;
+    }
+    
+    .time-period-slide h3 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    
+    .price-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .price-card {
+      min-width: 80%;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .prices-section {
+      padding: 3rem 0;
+    }
+    
+    .prices-section .section-title {
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .prices-tabs li {
+      padding: 0.8rem 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .current-time-indicator span {
+      font-size: 0.8rem;
+      padding: 0.5rem 1.5rem;
+    }
+    
+    .time-period-slide h3 {
+      font-size: 1.4rem;
+    }
+    
+    .price-card {
+      padding: 2rem 1.5rem;
+      min-width: 90%;
+    }
+    
+    .price-icon {
+      font-size: 2.5rem;
+    }
+    
+    .price-card h4 {
+      font-size: 1.4rem;
+    }
+    
+    .price-value {
+      font-size: 2rem;
+    }
+    
+    .slider-indicators .indicator {
+      width: 10px;
+      height: 10px;
+    }
+    
+    .slider-indicators .indicator.active {
+      width: 30px;
+    }
+    
+    .price-notes {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Animações para suavizar transições */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .price-tab-content.active {
+    animation: fadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  /* Aprimoramento visual noturno */
+  @media (prefers-color-scheme: dark) {
+    .price-notes {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .slider-indicators .indicator {
+      background-color: rgba(179, 179, 179, 0.2);
+    }
+  }
+  

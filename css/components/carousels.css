@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Carousels Component
+   Estilos genéricos para todos os tipos de carrosséis e sliders do site
+   ========================================================================== */
+
+/* Containers */
+.carousel-container,
+.gallery-container,
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  background-color: rgba(26, 26, 26, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* Tracks (Trilhas) - Container que desliza horizontalmente */
+.carousel-track,
+.gallery-track,
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  width: 100%;
+}
+
+/* Items dentro do carrossel */
+.carousel-item,
+.gallery-item,
+.slider-item {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Variante para exibição de múltiplos itens */
+.carousel-multi-item .carousel-item {
+  width: calc(33.333% - 1rem);
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-multi-item .carousel-item {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-multi-item .carousel-item {
+    width: calc(100% - 1rem);
+  }
+}
+
+/* Controles de navegação */
+.carousel-controls,
+.gallery-controls,
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Botões de navegação */
+.carousel-prev,
+.carousel-next,
+.gallery-prev,
+.gallery-next,
+.slider-prev,
+.slider-next {
+  background: linear-gradient(135deg, var(--color-orange-vibrant), var(--color-orange-incandescent));
+  color: var(--color-white);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover,
+.gallery-prev:hover,
+.gallery-next:hover,
+.slider-prev:hover,
+.slider-next:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.5);
+}
+
+.carousel-prev:focus,
+.carousel-next:focus,
+.gallery-prev:focus,
+.gallery-next:focus,
+.slider-prev:focus,
+.slider-next:focus {
+  outline: 2px solid var(--color-orange-vibrant);
+  outline-offset: 2px;
+}
+
+.carousel-prev:disabled,
+.carousel-next:disabled,
+.gallery-prev:disabled,
+.gallery-next:disabled,
+.slider-prev:disabled,
+.slider-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Indicadores de navegação (pontos) */
+.carousel-indicators,
+.gallery-indicators,
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.carousel-indicators .indicator,
+.gallery-indicators .indicator,
+.slider-indicators .indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color-gray-light);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .indicator:hover,
+.gallery-indicators .indicator:hover,
+.slider-indicators .indicator:hover {
+  background-color: var(--color-orange-incandescent);
+}
+
+.carousel-indicators .indicator.active,
+.gallery-indicators .indicator.active,
+.slider-indicators .indicator.active {
+  background-color: var(--color-orange-vibrant);
+  transform: scale(1.2);
+}
+
+/* Carrossel de Cards de Eventos */
+.events-carousel .carousel-track {
+  padding: 1rem 0;
+}
+
+.event-card {
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(10, 10, 15, 0.95));
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(245, 166, 35, 0.2);
+}
+
+.event-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+  transform: scale(1.05);
+}
+
+.event-date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, var(--color-orange-vibrant), var(--color-orange-incandescent));
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.event-date .day {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.event-date .month {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.event-details {
+  padding: 1.25rem;
+}
+
+.event-details h3 {
+  color: var(--color-orange-vibrant);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.event-description {
+  color: var(--color-gray-light);
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.event-info {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.event-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.event-info i {
+  color: var(--color-orange-vibrant);
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Galeria de imagens */
+.gallery-container {
+  height: 300px;
+  margin: 1.5rem 0;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--color-white);
+  padding: 1rem;
+  font-size: 0.9375rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Animações de transição */
+@keyframes carouselFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-fade-in {
+  animation: carouselFadeIn 0.5s ease forwards;
+}
+
+/* Efeito de brilho nos controles */
+.carousel-controls button::after,
+.gallery-controls button::after,
+.slider-controls button::after {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-controls button:hover::after,
+.gallery-controls button:hover::after,
+.slider-controls button:hover::after {
+  opacity: 1;
+}
+
+/* Acessibilidade */
+.carousel-container:focus-within,
+.gallery-container:focus-within,
+.slider-container:focus-within {
+  outline: 2px solid var(--color-orange-vibrant);
+  outline-offset: 2px;
+}
+
+/* Suporte a carrosséis de toque */
+.carousel-touch-enabled {
+  cursor: grab;
+}
+
+.carousel-touch-enabled:active {
+  cursor: grabbing;
+}
+
+/* Suporte a carrosséis de rolagem horizontal */
+.carousel-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.carousel-scroll .carousel-item {
+  scroll-snap-align: start;
+}
+
+.carousel-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-orange-vibrant);
+  border-radius: 3px;
+}
+
+.carousel-scroll::-webkit-scrollbar-track {
+  background-color: rgba(179, 179, 179, 0.2);
+  border-radius: 3px;
+}

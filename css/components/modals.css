@@ -1,0 +1,315 @@
+/* ======================================
+   MODALS - DÉDALOS BAR
+   ====================================== */
+
+/* Base Modal Structure */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background-color: rgba(10, 10, 15, 0.85); /* Usando o Cinza Profundo com transparência */
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #28241e 0%, #1a1a1a 100%);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 90%;
+  width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(245, 166, 35, 0.2); /* Laranja Vibrante com transparência para borda */
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #b3b3b3; /* Cinza Claro para o ícone */
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #f5a623; /* Laranja Vibrante no hover */
+  outline: none;
+}
+
+.modal-close:before {
+  content: '×';
+}
+
+/* Modal Header */
+.modal-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.2);
+  padding-bottom: 1rem;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #f5a623; /* Laranja Vibrante para o título */
+  margin: 0;
+}
+
+/* Modal Body */
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 1px solid rgba(179, 179, 179, 0.2);
+  padding-top: 1rem;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Modal Types */
+
+/* 1. Age Verification Modal - Specific Styling */
+.age-verification-modal .modal-content {
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0f 100%);
+  border: 2px solid #f5a623; /* Laranja Vibrante mais forte na borda */
+}
+
+.age-verification-modal .modal-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.age-verification-modal .modal-buttons {
+  justify-content: space-around;
+}
+
+.age-verification-modal .underage-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 36, 36, 0.1); /* Vermelho Neon com alta transparência */
+  border-radius: 4px;
+}
+
+/* 2. Alert Modal */
+.alert-modal .modal-content {
+  max-width: 400px;
+}
+
+.alert-modal .modal-icon {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.alert-modal.success .modal-icon {
+  color: #4facfe; /* Azul do gradiente secundário */
+}
+
+.alert-modal.error .modal-icon {
+  color: #ff2424; /* Vermelho Neon */
+}
+
+.alert-modal.warning .modal-icon {
+  color: #f76b1c; /* Laranja Incandescente */
+}
+
+.alert-modal.info .modal-icon {
+  color: #e68e09; /* Dourado Suave */
+}
+
+/* 3. Form Modal */
+.form-modal .modal-content {
+  max-width: 600px;
+}
+
+.form-modal .modal-body {
+  margin-bottom: 0;
+}
+
+/* 4. Image Modal */
+.image-modal .modal-content {
+  max-width: 90%;
+  width: auto;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  border-radius: 4px;
+}
+
+.image-modal .modal-caption {
+  background-color: rgba(26, 26, 26, 0.8);
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* 5. Video Modal */
+.video-modal .modal-content {
+  max-width: 90%;
+  width: auto;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.video-modal video,
+.video-modal iframe {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Loading State */
+.modal-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  border-radius: 8px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(245, 166, 35, 0.3); /* Laranja Vibrante com transparência */
+  border-top-color: #f5a623; /* Laranja Vibrante */
+  border-radius: 50%;
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animations */
+.modal-fade .modal-content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-fade.active .modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-slide-up .modal-content {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.modal-slide-up.active .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Accessibility Features */
+.modal:focus-within {
+  outline: none;
+}
+
+.modal-content:focus {
+  outline: 2px solid #f5a623; /* Laranja Vibrante */
+  outline-offset: 2px;
+}
+
+/* Make sure modals are properly hidden from screen readers when inactive */
+.modal[hidden] {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1rem;
+  }
+  
+  .age-verification-modal .modal-title {
+    font-size: 1.5rem;
+  }
+}

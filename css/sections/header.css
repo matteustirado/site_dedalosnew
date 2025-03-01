@@ -1,0 +1,286 @@
+
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(245, 166, 35, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 15, 0.97),
+        rgba(26, 26, 26, 0.99)
+    );
+    z-index: -1;
+}
+
+/* Header container with max width */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo styles */
+.logo-small {
+    display: flex;
+    align-items: center;
+}
+
+.logo-small img {
+    max-height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-small img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation styles */
+.main-nav {
+    display: flex;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.5rem; /* Aumentado de 1.5rem para 2.5rem para dar mais espaço */
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px; /* Aumentado de 15px para 16px */
+    padding: 0.7rem 0; /* Aumentado de 0.5rem para 0.7rem */
+    position: relative;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px; /* Adicionado espaçamento entre letras */
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #f5a623, #f76b1c);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #f5a623;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Login area styles */
+.login-area {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    padding: 0.6rem 1.5rem; /* Aumentado para um botão maior */
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Alterado para o gradiente azul */
+    color: #000000;
+    border: none;
+    border-radius: 6px; /* Reduzido de 25px para 6px para ficar mais quadrado */
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* Adicionado para um visual mais moderno */
+    letter-spacing: 0.5px; /* Adicionado espaçamento entre letras */
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4); /* Ajustado para a cor azul */
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Alterado para o gradiente azul */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Header scroll state - more compact when scrolled */
+.main-header.scrolled {
+    padding: 0.6rem 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header hidden state - for showing/hiding on scroll */
+.main-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Active nav item indicator */
+.main-nav a.active {
+    color: #f5a623;
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-nav ul {
+        gap: 1.8rem; /* Aumentado de 1rem para 1.8rem */
+    }
+}
+
+@media (max-width: 767px) {
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 200;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-left: 1px solid rgba(79, 172, 254, 0.2); /* Alterado para azul */
+    }
+    
+    .main-nav.active {
+        right: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Aumentado de 1.5rem para 2rem */
+    }
+    
+    .main-nav a {
+        font-size: 18px;
+        display: block;
+        padding: 0.7rem 1.2rem; /* Aumentado */
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 190;
+    }
+    
+    .mobile-menu-overlay.active {
+        display: block;
+    }
+    
+    .btn-login {
+        padding: 0.5rem 1.2rem;
+        font-size: 13px;
+    }
+}
+
+/* Animation for mobile menu toggle */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Accessibility improvements */
+.main-header a:focus, 
+.btn-login:focus,
+.mobile-menu-toggle:focus {
+    outline: 2px solid #4facfe; /* Alterado para azul */
+    outline-offset: 2px;
+}
+
+/* Animation for header elements */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-small, 
+.main-nav, 
+.login-area {
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+.main-nav {
+    animation-delay: 0.1s;
+}
+
+.login-area {
+    animation-delay: 0.2s;
+}

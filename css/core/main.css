@@ -1,0 +1,116 @@
+/* =========================================
+   DÉDALOS BAR - MAIN CSS
+   
+   Este arquivo importa todos os componentes CSS 
+   na ordem correta para garantir que as
+   dependências sejam respeitadas.
+   ========================================= */
+
+/* === CORE: FUNDAÇÃO === */
+/* Reset deve vir primeiro para normalizar os estilos entre navegadores */
+@import url('core/reset.css');
+
+/* Variáveis globais (cores, tamanhos, etc.) */
+@import url('core/variables.css');
+
+/* Tipografia (fontes, tamanhos de texto, hierarquia) */
+@import url('core/typography.css');
+
+/* Estilos base para elementos HTML */
+@import url('core/base.css');
+
+/* Animações e keyframes globais */
+@import url('core/animations.css');
+
+/* Configurações de acessibilidade */
+@import url('core/accessibility.css');
+
+/* === COMPONENTES: UI ELEMENTS === */
+/* Botões e elementos clicáveis */
+@import url('components/buttons.css');
+
+/* Formulários e inputs */
+@import url('components/forms.css');
+
+/* Cards para conteúdo */
+@import url('components/cards.css');
+
+/* Navegação e menus */
+@import url('components/navigation.css');
+
+/* Janelas modais e pop-ups */
+@import url('components/modals.css');
+
+/* Sistema de abas */
+@import url('components/tabs.css');
+
+/* Sliders e controles deslizantes */
+@import url('components/sliders.css');
+
+/* Acordeões para FAQs */
+@import url('components/accordions.css');
+
+/* Carrosséis para eventos e galerias */
+@import url('components/carousels.css');
+
+/* Tooltips para dicas contextuais */
+@import url('components/tooltips.css');
+
+/* Loaders e indicadores de carregamento */
+@import url('components/loaders.css');
+
+/* === SEÇÕES: ESTRUTURA DO SITE === */
+/* Tela inicial de impacto com efeito Multichrome */
+@import url('sections/splash-screen.css');
+
+/* Modal de verificação de idade */
+@import url('sections/age-verification.css');
+
+/* Cabeçalho fixo */
+@import url('sections/header.css');
+
+/* Seção Hero (logo e contador) */
+@import url('sections/hero.css');
+
+/* Seção de preços e tabelas */
+@import url('sections/prices.css');
+
+/* Abas de informações */
+@import url('sections/info-tabs.css');
+
+/* Regras da casa */
+@import url('sections/rules.css');
+
+/* Perguntas frequentes */
+@import url('sections/faq.css');
+
+/* Mapas e localizações */
+@import url('sections/locations.css');
+
+/* Formulário de contato */
+@import url('sections/contact.css');
+
+/* Integração com redes sociais */
+@import url('sections/social.css');
+
+/* Trabalhe conosco */
+@import url('sections/careers.css');
+
+/* Carrossel de eventos */
+@import url('sections/events.css');
+
+/* Rodapé */
+@import url('sections/footer.css');
+
+/* === RESPONSIVIDADE === */
+/* Dispositivos móveis (smartphones) */
+@import url('responsive/mobile.css');
+
+/* Tablets */
+@import url('responsive/tablet.css');
+
+/* Desktop */
+@import url('responsive/desktop.css');
+
+/* Telas grandes */
+@import url('responsive/large-screens.css');
